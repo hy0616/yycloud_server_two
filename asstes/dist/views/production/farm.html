@@ -1,0 +1,426 @@
+<div style="padding: 0 30px;" ng-controller="farmCtr">
+    <div class="pageTop_nav clearFloat">
+        <div style="float: left">
+            <span>生产 > </span>
+            <span style="font-size: 16px;">{{labelNav}}</span>
+        </div>
+        <div class="farm_header">
+            <span ng-class="{'farm_header_active':labelNav == '农事管理'}" ng-click="manage()">
+                <img src="tools/images/binghaifz_ico1.jpg"/>
+                <span>农事管理</span>
+            </span>
+            <span ng-class="{'farm_header_active':labelNav == '病害防治'}" ng-click="disease()">
+                <img src="tools/images/binghaifz_ico2.jpg"/>
+                <span>病害防治</span>
+            </span>
+        </div>
+    </div>
+
+    <div ng-switch="labelNav">
+        <div ng-switch-default="农事管理">
+            <div class="col-md-10 farm_manage_left">
+                <div class="clearFloat">
+                    <div style="float: left" class="form-inline">
+                        <select class="form-control">
+                            <option>全部</option>
+                            <option>记录</option>
+                            <option>计划</option>
+                        </select>
+                        <input type="text" style="width: 330px;" class="form-control" placeholder="请输入搜索条件"/>
+                        <button class="btn btn-primary">搜索</button>
+                    </div>
+                    <div style="float: right;">
+                        <a class="btn btn-success">添加农事记录</a>
+                        <a class="btn btn-default" style="margin-left: 5px">添加农事计划</a>
+                    </div>
+                </div>
+
+                <div class="farm_manage_left_centent">
+                    <div>
+                        <h4>农事管理表</h4>
+
+                        <div style="float: right;">
+
+                            <div class="btn-group">
+                                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    农事操作
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a>田间管理</a></li>
+                                    <li><a>定植</a></li>
+                                    <li><a>采收</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="btn-group">
+                                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    农事图片
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a>有图</a></li>
+                                    <li><a>无图</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="btn-group">
+                                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    添加人
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li style="margin-bottom: 3px">
+                                        <input type="text" style="width: 80%;margin-left: 10px;"
+                                               class="form-control"/></li>
+                                    <li><a>添加人</a></li>
+                                    <li><a>shuyi</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="btn-group">
+                                <a class="btn btn-default" farm-datetime>时间
+                                    <span class="caret"></span>
+                                </a>
+
+                                <div class="farm_datetimepicker">
+                                    <div>
+                                        <h4>按时间搜索</h4>
+                                    </div>
+                                    <div>
+                                        <div class="form-inline" style="margin-bottom: 13px">
+                                            <span>开始时间:</span>
+
+                                            <div class='input-group date datetimepicker1' date-picker>
+                                                <input type='text' class="form-control"/>
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-inline">
+                                            <span>结束时间:</span>
+
+                                            <div class='input-group date datetimepicker1' date-picker>
+                                                <input type='text' class="form-control"/>
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-success">提交</button>
+                                        <button class="btn btn-default" style="margin-left: 3px;">返回</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="btn-group">
+                                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    状态
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li style="margin-bottom: 3px"><input type="text"
+                                                                          style="width: 80%;margin-left: 10px;"
+                                                                          class="form-control"/></li>
+                                    <li><a>已完成</a></li>
+                                    <li><a>未完成</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="btn-group" style="margin-right: 10px;">
+                                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    完成人
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li style="margin-bottom: 3px"><input type="text"
+                                                                          style="width: 80%;margin-left: 10px;"
+                                                                          class="form-control"/></li>
+                                    <li><a>完成人</a></li>
+                                    <li><a>shuyi</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div style="background-color: #fcfcfc">
+                        <div>
+                            <div>
+                                <img src="tools/images/farmingIco20.png"/>
+                            </div>
+                            <div>
+                                <p>很遗憾，没有农事计划和记录</p>
+
+                                <p style="line-height: 26px">完整的农事计划和记录可以帮助您有效进行人员管理，全程追溯农事内容，保证蔬菜安全放心，快来添加吧！</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-2 farm_manage_ringht">
+                <div>
+                    <div>
+                        <h4>农事操作管理</h4>
+                    </div>
+                    <div>
+                        <span>
+                            <img src="tools/images/farmingIco10.png"/>
+                            <span>共 <i style="color: #fab26b">87</i> 项</span>
+                        </span>
+                        <span style="float: right">
+                            <a class="btn btn-success">添加</a>
+                        </span>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>控水</li>
+                            <li>移苗</li>
+                            <li>控温</li>
+                            <li>防治</li>
+                            <li>浇水</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <div>
+                        <h4>月排行榜</h4>
+                    </div>
+                    <div>
+                        <p style="text-align: center">本月没有劳动工时记录</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div ng-switch-when="病害防治">
+            <div style="margin-top: 16px;">
+
+                <div style="overflow: hidden;height: 530px;">
+                    <div class="disease_seekNav">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active">
+                                <a href="#diseasePicture" onclick="return false;" data-toggle="tab">病害图片搜索</a>
+                            </li>
+                            <li>
+                                <a href="#diseaseDescribe" onclick="return false;" data-toggle="tab">病害描述搜索</a>
+                            </li>
+                            <li>
+                                <a href="#diseaseName" onclick="return false;" data-toggle="tab">病害名称搜索</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" style="margin: 18px 0 0 14px">
+
+                            <div class="tab-pane active" id="diseasePicture" style="height: 490px">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <span class=" col-md-2 control-label">品种选择</span>
+
+                                        <div class="col-md-4">
+                                            <select class="form-control" ng-model="varietiesPart.varieties" ng-options="val.varieties for val in varietiesPartData">
+                                                <option value="">请选择品种</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-2 control-label">危害部位</span>
+
+                                        <div class="col-md-4">
+                                            <select class="form-control" ng-model="varietiesPart.Part" ng-options="val.part for val in varietiesPartData">
+                                                <option value="">请选择危害部位</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span style="padding-top: 52px" class="col-md-2 control-label">上传图片</span>
+                                        <div class="col-md-4" style="display: inline-block">
+                                            <img src="tools/images/farmingIco15.jpg"/>
+                                            <input type="file" style="opacity: 0"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-primary">搜索</button>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="diseaseDescribe">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <span class=" col-md-2 control-label">品种选择</span>
+
+                                        <div class="col-md-4">
+                                            <select class="form-control" ng-model="varietiesPart.varieties" ng-options="val.varieties for val in varietiesPartData">
+                                                <option value="">请选择品种</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-2 control-label">危害部位</span>
+
+                                        <div class="col-md-4">
+                                            <select class="form-control" ng-model="varietiesPart.Part" ng-options="val.part for val in varietiesPartData">
+                                                <option value="">请选择危害部位</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span style="padding-top: 28px" class="col-md-2 control-label">病害描述</span>
+                                        <div class="col-md-6">
+                                            <textarea style="height: 80px" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="diseaseName">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <span class=" col-md-2 control-label">品种选择</span>
+
+                                        <div class="col-md-4">
+                                            <select class="form-control" ng-model="varietiesPart.varieties" ng-options="val.varieties for val in varietiesPartData">
+                                                <option value="">请选择品种</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-2 control-label">危害部位</span>
+
+                                        <div class="col-md-4">
+                                            <select class="form-control" ng-model="varietiesPart.Part" ng-options="val.part for val in varietiesPartData">
+                                                <option value="">请选择危害部位</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-2 control-label">病害名称</span>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div style="float: left;width: 3%;height: 100%;padding: 15% 13px">
+                        <img src="tools/images/binghaifz_ico3.png"/>
+                    </div>
+
+                    <div class="disease_seekResult">
+                        <div>
+                            <div>
+                                <img src="tools/images/binghaifz_ico13.jpg"/>
+
+                                <p style="color: #333;font-size: 18px;margin-bottom: 20px">暂无信息</p>
+
+                                <p>请在左侧选择并输入搜索条件，这里为您呈现病害结果！</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="overflow: hidden">
+                <div class="farm_disease_leftLower">
+                    <div style="border: 1px solid #ddd">
+                        <ul>
+                            <li>
+                                <img src="tools/images/binghaifz_ico4.png" />
+                                <span>形态特征</span>
+                                <span>暂无信息</span>
+                            </li>
+                            <li>
+                                <img src="tools/images/binghaifz_ico5.png" />
+                                <span>症状</span>
+                                <span>暂无信息</span>
+                            </li>
+                            <li>
+                                <img src="tools/images/binghaifz_ico6.png" />
+                                <span>发病条件</span>
+                                <span>暂无信息</span>
+                            </li>
+                            <li style="border-bottom: none">
+                                <img src="tools/images/binghaifz_ico7.png" />
+                                <span style="left: 56px">防治方法</span>
+                                <ul style="display: inline-block;overflow: hidden;margin-left: 160px">
+                                    <li>
+                                        <img src="tools/images/binghaifz_img1.png" />
+                                        <span>农业方法</span>
+                                    </li>
+                                    <li>
+                                        <img src="tools/images/binghaifz_img2.png" />
+                                        <span>物理方法</span>
+                                    </li>
+                                    <li>
+                                        <img src="tools/images/binghaifz_img3.png" />
+                                        <span>化学方法</span>
+                                    </li>
+                                    <li>
+                                        <img src="tools/images/binghaifz_img4.png" />
+                                        <span>生物方法</span>
+                                    </li>
+                                    <li>
+                                        <img src="tools/images/binghaifz_img5.png" />
+                                        <span>有机防治</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div>
+                            <img src="tools/images/farmingIco10.png"/>
+                            <h2>农场采用的防治方法</h2>
+                        </div>
+                        <div>
+                            <p>暂无信息</p>
+                            <p>记录发病历史和当时的处理方法可以帮助农场准确诊断病害、掌握发生规律以及存档有效防治措施！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="farm_disease_ringhtLower">
+
+                    <div>
+                        <h2>病害求助</h2>
+                    </div>
+                    <div>
+                        <img src="tools/images/binghaifz_ico14.jpg" />
+                        <p>暂无信息</p>
+                        <p>无法判断的病害可以通过病害求助得到答案，还会有服务团队的专业解答哦！</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!--
+    todo
+    农事管理 中 添加农事记录 和 添加农事计划 弹出框
+    病害防治中搜索按钮弹出框
+-->

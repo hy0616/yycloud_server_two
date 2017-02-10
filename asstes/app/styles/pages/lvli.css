@@ -1,0 +1,217 @@
+/*body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+body {
+    font-size: 12px;
+    color: #000;
+    font-family: "微软雅黑";
+    line-height: 150%;
+}
+body {
+    font-family: '微软雅黑';
+    font-size: 12px;
+    color: #525252;
+}
+body, a, p, h1, h2, h3, h4, h5, h6, strong, ul, ol, li, div, form, table, tbody, thead, tfoot, th, tr, td, u, b, i, s, font, dl, dt, dd, em, sup, sub {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+     font-size: 10px;
+}*/
+
+.clear {
+    clear: both;
+}
+.r_title {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 22px;
+}
+.fl {
+    float: left;
+    display: inline;
+}
+.r_t_l {
+    font-family: '微软雅黑';
+    font-size: 14px;
+    color: #525252;
+}
+.r_t_l {
+    width: 29%;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+}
+.r_t_l font {
+    font-size: 16px;
+}
+.r_t_l font, .r_t_l a strong {
+    font-size: 16px;
+    color: #525252;
+    font-weight: normal;
+}
+.fr {
+    float: right;
+    display: inline;
+}
+.clear {
+    clear: both;
+}
+
+ul, ol {
+    margin: 0;
+}
+ul, ol, li {
+    list-style: none;
+}
+.cm_resumeList li {
+    float: left;
+}
+.cm_resumeList li a {
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 10px;
+    color: #3f3f3f;
+    overflow: hidden;
+    font-family: '宋体';
+}
+.cm_resumeList li img {
+    float: left;
+    margin-top: 16px;
+}
+.cm_resumeList li span {
+    float: left;
+    text-indent: 10px;
+}
+.cm_designHd {
+    clear: both;
+    height: 40px;
+    position: relative;
+    margin-top: 59px;
+}
+.search-header-lt {
+    float: left;
+}
+.search-header-lt .public-search {
+    float: left;
+    margin-right: 5px;
+}
+.public-search {
+    position: relative;
+}
+.octicon-search02 {
+    background: url(../../tools/images/cjsearch_bg.png) no-repeat;
+    display: block;
+    float: left;
+    height: 13px;
+    left: 8px;
+    position: absolute;
+    top: 10px;
+    width: 13px;
+    z-index: 3;
+}
+.search-header-lt .form-control {
+    width: 264px;
+    padding-left: 25px;
+    text-indent: 0;
+}
+.srarchfont {
+    color: #d2d2d2;
+    text-indent: 15px;
+    font-family: '微软雅黑';
+}
+.form-control {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+.cm_designHdRt {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/*.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn-group > .btn:first-child {
+    margin-left: 0;
+    margin-right: -1px;
+}
+.btn-group > .btn:first-child {
+    margin-left: 0;
+}
+.btn-group > .btn, .btn-group-vertical > .btn {
+    position: relative;
+    float: left;
+}
+.btn-group .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+.btn {
+    padding: 7px 19px;
+}
+.btn {
+    height: 34px;
+    line-height: 20px;
+    padding: 6px 19px;
+    box-sizing: border-box;
+}
+.btn {
+    padding: 7px 19px;
+}
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 19px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid;
+    border-radius: 4px;
+}
+.btn-success {
+    color: #fff;
+}*/
+.logo{height: 238px;position: relative;margin-top: 55px;}
+.logo ul{display: block;float: left;}
+.logo ul li{float: left;margin-left: 54px;}
+.a12{display: block;position: absolute;margin: 216px 111px;font-family: "微软雅黑";font-size: 18px;}
+.a13{display: block;position: absolute;margin: 216px 331px;font-family: "微软雅黑";font-size: 18px;}
+

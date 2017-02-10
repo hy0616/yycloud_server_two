@@ -1,0 +1,142 @@
+<div style="padding: 0 30px;" ng-controller="integralMall">
+    <div class="pageTop_nav clearFloat">
+        <div style="float: left">
+            <a ng-href="#/">个人主页</a>
+            <span> > </span>
+            <a ng-if="secondSwitch" ng-click="closeSecond()" ng-href="#/integralExchange"> 积分商城</a>
+            <span ng-if="!secondSwitch" style="font-size: 16px;">积分商城</span>
+            <span ng-if="secondSwitch" style="font-size: 16px;"> > {{contentLi.second}}</span>
+        </div>
+        <div style="float: right;font-size: 16px;">
+            <img style="padding-bottom: 3px" src="tools/images/no6.png"/>
+            <span style="padding-left: 8px">可用积分</span>
+            <span style="color: #ff5000;padding-left: 8px">0</span>
+        </div>
+    </div>
+    <div class="integral_conent">
+        <div ng-switch="integralContent">
+            <div ng-switch-when="contentUl" class="clearFloat">
+                <div>
+                    <input type="text" class="form-control" placeholder="搜索你想兑换的商品"/>
+                </div>
+                <div class="integral_btn" ng-repeat="integral in integralData">
+                    <div class="integral_btn_img">
+                        <img ng-src={{integral.img}} ng-click="getContentLi(integral)"/>
+
+                        <p>{{integral.label}}</p>
+
+                        <p>
+                            <span style="color: #ff5000;font-size: 18px">{{integral.exchange}}</span>
+                            <span>积分</span>
+                            <span style="margin-left: 50px;color: #646464">
+                                <i>市场价</i>
+                                <i>{{integral.marketValue}}</i>
+                            </span>
+                        </p>
+
+                        <div class="integral_btn_bottom">
+                            <span>数量</span>
+
+                            <div update-number>
+                                <input type="text" value="1">
+
+                                <div>
+                                    <img src="tools/images/plus.png"/>
+                                    <img src="tools/images/minus.png"/>
+                                </div>
+                            </div>
+                            <a href="javascript:;" data-target="#integralModal" data-toggle="modal"
+                               class="btn btn-default">立即兑换</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div ng-switch-when="contentLi" class="clearFloat">
+
+                <div class="integral_contentLi_left">
+                    <img ng-src={{contentLi.img}}>
+
+                    <div>
+                        <img src="tools/images/leftBtn.png">
+                        <img style="width: 72px;height: 69px;" ng-src={{contentLi.img}}>
+                        <img style="float: right" src="tools/images/rightBtn.png">
+                    </div>
+                </div>
+                <div class="integral_contentLi_ringht">
+                    <h4>{{contentLi.label}}</h4>
+
+                    <p><span>商品编号</span><span>{{contentLi.child.productId}}</span></p>
+
+                    <p><span>兑换积分</span>
+                        <span style="font-size:16px; color:#ff5000; font-weight:bold;">{{contentLi.exchange}}</span></p>
+
+                    <p><span>市场价钱</span><span>{{contentLi.marketValue}}</span></p>
+
+                    <p style="margin-bottom: 0;"><span>库存</span><span>1次</span></p>
+
+                    <div update-number>
+                        <span>数量</span>
+                        <img src="tools/images/plus2.png">
+                        <input style="width: 37px;" type="text" value="1">
+                        <img src="tools/images/minus2.png">
+                        <a href="javascript:;" data-target="#integralModal" data-toggle="modal">立即兑换</a>
+                    </div>
+                </div>
+
+                <div class="integral_contentLi_foot">
+                    <p>产品简介</p>
+
+                    <div class="integral_contentLi_foot_content">
+                        <p>专家名称: {{contentLi.child.expertName}}</p>
+
+                        <p>服务地点: {{contentLi.child.serviceLocation}}</p>
+
+                        <p>服务介绍: {{contentLi.child.serviceIntroduction}}</p>
+
+                        <p>开课人数: {{contentLi.child.number}}</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="integral_foot">
+        <a ng-href="#/integralRule">
+            <img src="tools/images/step1.png">
+        </a>
+        <a ng-href="#/">
+            <img src="tools/images/step2.png">
+        </a>
+        <a ng-href="#/integralRecord" style="border: none; cursor: default;">
+            <img src="tools/images/step3.png">
+        </a>
+        <!--<a style="border: none; cursor: default;">
+            <img src="tools/images/step4.png">
+        </a>-->
+
+    </div>
+
+    <div class="modal fade in modalline" id="integralModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="integral_modal">
+                    <div class="modal-body">
+                        <p> 您当前拥有<i>积分不足</i>以兑换该商品，</p>
+                        <p>坚持完成<i>每日任务</i>，早日兑换心仪商品哦！</p>
+                    </div>
+                    <a ng-href="#/" onclick="jQuery('#integralModal').modal('hide')" class="btn btn-primary">去做任务</a>
+                    <a class="btn btn-default" data-dismiss="modal">我知道了</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

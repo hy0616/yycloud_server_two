@@ -1,0 +1,1461 @@
+<div ng-controller="analysisCtr" class="analysis">
+    <div class="analysis_left">
+        <h2 switch-analysis-left>
+            <img src="tools/images/levelMenu_ico2.png">农场资源统计分析
+        </h2>
+        <ul style="display: block">
+            <li class="analysis_left_li_active">
+                <img src="tools/images/cm_biao20.png">农场土地资源统计
+            </li>
+            <li>
+                <img src="tools/images/cm_biao20.png">报表管理
+            </li>
+        </ul>
+        <h2 switch-analysis-left>
+            <img src="tools/images/levelMenu_ico2.png">计划与合同分析
+        </h2>
+        <ul>
+            <li>
+                <img src="tools/images/biao_07.png">采购合同汇总分析
+            </li>
+            <li>
+                <img src="tools/images/xq_analysis.png">需求产量查询分析
+            </li>
+            <li>
+                <img src="tools/images/yuchan.png">种植产量查询分析
+            </li>
+            <!--<li>
+                <img src="tools/images/qk_analysis.png">缺口产量查询分析
+            </li>-->
+        </ul>
+        <h2 switch-analysis-left>
+            <img src="tools/images/levelMenu_ico2.png">农事管理分析
+        </h2>
+        <ul>
+            <li>
+                <img src="tools/images/cm_biao21.png">农资投入品统计分析
+            </li>
+            <li>
+                <img src="tools/images/paiming.png">环境区域管理排名分析
+            </li>
+            <li>
+                <img src="tools/images/mrecord.png">环境检测历史记录
+            </li>
+           <!-- <li>
+                <img src="tools/images/tmnc.png">透明管理
+            </li>-->
+            <li>
+                <img src="tools/images/cjsearch_bg.png">自动查棚
+            </li>
+            <!--<li>
+                <img src="tools/images/farmingIco26.png">人员考核
+            </li>-->
+        </ul>
+        <h2 switch-analysis-left>
+            <img src="tools/images/levelMenu_ico2.png">订单与采收分析
+        </h2>
+        <ul>
+            <li>
+                <img src="tools/images/fenxi3.png">订单金额统计分析
+            </li>
+            <li>
+                <img src="tools/images/fenxi4.png">商品销售统计分析
+            </li>
+            <li>
+                <img src="tools/images/pm.png">客户购买量排名
+            </li>
+           <!-- <li>
+                <img src="tools/images/biao_19.png">采收量查询
+            </li>
+            <li>
+                <img src="tools/images/xq_analysis.png">需求量与采收量对比分析
+            </li>-->
+        </ul>
+        <h2 switch-analysis-left>
+            <img src="tools/images/levelMenu_ico2.png">库存分析
+        </h2>
+        <ul>
+            <li>
+                <img src="tools/images/cm_biao22.png">出入库统计分析
+            </li>
+            <li>
+                <img src="tools/images/cm_biao23.png">库存(物料)流水统计分析
+            </li>
+            <li>
+                <img src="tools/images/baozhuang-icon.png">包装损耗统计分析
+            </li>
+        </ul>
+       <!-- <h2 switch-analysis-left>
+            <img src="tools/images/levelMenu_ico2.png">履历分析
+        </h2>
+        <ul>
+            <li>
+                <img src="tools/images/yuchan.png">履历使用统计分析
+            </li>
+            <li>
+                <img src="tools/images/fenxi1.png">履历生成量统计分析
+            </li>
+            <li>
+                <img src="tools/images/pz_analysis.png">履历生成量按品种统计分析
+            </li>
+            <li>
+                <img src="tools/images/fenxi2.png">履历访问量按品种统计
+            </li>
+            <li>
+                <img src="tools/images/ll_analysis.png">履历访问量查询
+            </li>
+        </ul>-->
+    </div>
+
+    <div class="analysis_right">
+
+        <div ng-switch="switchLeftNav">
+            <div ng-switch-default="农场土地资源统计">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">农场统计分析</span>
+                </div>
+
+                <div>
+                    <div>
+                        <div class="form-inline" style="margin: 23px 0;display: inline-block">
+                            <span>日期选择:</span>
+
+                            <div class='input-group date datetimepicker1' date-picker>
+                                <input type='text' class="form-control"/>
+                                <span class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-inline" style="display: inline-block">
+                            <span>__</span>
+
+                            <div class='input-group date datetimepicker1' date-picker>
+                                <input type='text' class="form-control"/>
+                                <span class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </span>
+                            </div>
+                            <span>（投入使用设施量）</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <ul class="analysisCheckUl">
+                            <li>种植环境:</li>
+                            <li>
+                                <input type="checkbox" ng-model="allcheck" checked>
+                                <span>全选</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" ng-checked="allcheck">
+                                <span>加热温室</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" ng-checked="allcheck">
+                                <span>日光温室</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" ng-checked="allcheck">
+                                <span>连栋温室</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" ng-checked="allcheck">
+                                <span>春秋棚</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" ng-checked="allcheck">
+                                <span>大田</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" ng-checked="allcheck">
+                                <span>果园</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" ng-checked="allcheck">
+                                <span>水面</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" ng-checked="allcheck">
+                                <span>养殖</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" ng-checked="allcheck">
+                                <span>其他</span>
+                            </li>
+                            <li>
+                                <a class="btn btn-primary">搜索</a>
+                            </li>
+                            <li>
+                                <a class="btn btn-default">重置</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div style="padding-top: 20px;">
+                        <div class="tjfxTabTp">
+                            <ul class="nav nav-tabs" role="tablist" id="myTab">
+                                <li class="active"><a href="#Ranking" onclick="return false" role="tab"
+                                                      data-toggle="tab">排名图</a></li>
+                                <li><a href="#Details" onclick="return false" role="tab" data-toggle="tab">详情表</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Ranking">
+                                <div class="cm_pmtCon">
+                                    <table class="cm_userHd">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <span>农场数量</span>
+                                                <em style="color: #2867cf"><span>1</span></em>
+                                            </td>
+                                            <td>
+                                                <span>农场面积</span>
+                                                <em style="color: #ca1717"><span>33.7亩</span></em>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="padding-bottom: 20px;overflow: hidden">
+                                    <div class="monitor2_content_left">
+                                        <select class="form-control" style="width: 140px;">
+                                            <option value="">农场面积</option>
+                                            <option>设施总量</option>
+                                            <option>投入使用设施</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="cm_pmtZhu">
+                                    <highchart config="getNCTDZYanalysisChart"
+                                               style="width: 100%;height: 100%;overflow: auto"></highchart>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="Details">
+                                <div class="cm_xqbCon">
+                                    <table class="tableXqb" cellpadding="0" cellspacing="0">
+                                        <thead>
+                                        <tr>
+                                            <td width="60">序号</td>
+                                            <td width="250">农场名称</td>
+                                            <td width="150">农场面积</td>
+                                            <td width="150">设施总量</td>
+                                            <td width="220">投入使用设施</td>
+                                            <td width="150">加热温室</td>
+                                            <td width="150">日光温室</td>
+                                            <td width="150">连栋温室</td>
+                                            <td width="150">春秋棚</td>
+                                            <td width="150">菜园</td>
+                                            <td width="150">果园</td>
+                                            <td width="150">水面</td>
+                                            <td width="150">养殖</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>云洋</td>
+                                            <td>33.65亩</td>
+                                            <td>3个</td>
+                                            <td>3个</td>
+                                            <td>2个</td>
+                                            <td>1个</td>
+                                            <td>0个</td>
+                                            <td>0个</td>
+                                            <td>0个</td>
+                                            <td>0个</td>
+                                            <td>0个</td>
+                                            <td>0个</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div ng-switch-when="报表管理">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">报表管理</span>
+                </div>
+
+                <div style="margin-top: 30px">
+                    <div>
+                        <div class="form-inline" style="float: left;">
+                            <input type="text" class="form-control" style="width: 305px;" placeholder="请输入搜索条件"/>
+                            <button type="button" class="btn btn-primary" style="width: 65px">搜索</button>
+                        </div>
+                        <div style="float: right">
+                            <button type="button" class="btn btn-success">生成报表</button>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+
+                    <div class="ulAllocation">
+                        <ul ul-allocation>
+                            <li>序号</li>
+                            <li>报表名称</li>
+                            <li>报表种类</li>
+                            <li>创建人</li>
+                            <li>创建时间</li>
+                            <li>操作</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="采购合同汇总分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">采购合同汇总分析</span>
+                </div>
+
+                <div class="form-inline cght_analysis1">
+                    <select class="form-control" ng-model="selectTime.startYear">
+                        <option ng-repeat="year in yearData">{{year}}</option>
+                    </select>
+                    <select class="form-control" ng-model="selectTime.startMonth">
+                        <option ng-repeat="month in monthData">{{month}}</option>
+                    </select>
+
+                    <span style="margin-right: 18px">——</span>
+
+                    <select class="form-control" ng-model="selectTime.endYear">
+                        <option ng-repeat="year in yearData">{{year}}</option>
+                    </select>
+                    <select class="form-control" ng-model="selectTime.endMonth">
+                        <option ng-repeat="month in monthData">{{month}}</option>
+                    </select>
+                    <button class="btn btn-primary" ng-click="cghtSearch()">搜索</button>
+                </div>
+
+                <div class="cght_analysis2">
+                    <ul class="clearFloat">
+                        <li ng-repeat="el in timeRange" cght-li-active="">
+                            <span>{{el}}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--<div>
+                    todo
+                </div>-->
+
+            </div>
+
+            <div ng-switch-when="需求产量查询分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">需求产量查询分析</span>
+                </div>
+
+                <div class="xqcl_analysis">
+                    <div class="form-inline">
+                        <span>时间: &nbsp;</span>
+
+                        <div class='input-group date datetimepicker1' date-picker>
+                            <input type='text' class="form-control"/>
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
+                        </div>
+                        <span style="margin: 0 8px">——</span>
+
+                        <div class='input-group date datetimepicker1' date-picker>
+                            <input type='text' class="form-control"/>
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 78px;margin-left: 8px">搜索</button>
+                    </div>
+
+                    <div class="form-inline xqcl_div1">
+                        <span>选择作物: </span>
+                        <select class="form-control">
+                            <option>全部</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="padding-top: 20px;">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#xqcl1" onclick="return false" role="tab"
+                                                  data-toggle="tab">排名图</a></li>
+                            <li><a href="#xqcl2" onclick="return false" role="tab" data-toggle="tab">详情表</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="xqcl1">
+                            <div class="cm_pmtCon">
+                                <table class="cm_userHd">
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <span>需求品种</span>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>需求产量</span>
+                                            <span>33334.00kg</span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="cm_pmtZhu">
+                                <highchart config="getXQCLanalysisChart"
+                                           style="width: 100%;height: 100%;overflow: auto"></highchart>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="xqcl2">
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="种植产量查询分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">种植产量查询分析</span>
+                </div>
+
+                <div class="zzcl_analysis1">
+                    <div class="form-inline">
+                        <span>采收时间: &nbsp;</span>
+
+                        <div class='input-group date datetimepicker1' date-picker>
+                            <input type='text' class="form-control"/>
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
+                        </div>
+                        <span style="margin: 0 8px">—</span>
+
+                        <div class='input-group date datetimepicker1' date-picker>
+                            <input type='text' class="form-control"/>
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 78px;margin-left: 8px">搜索</button>
+                    </div>
+
+                    <div class="form-inline zzcl_div1">
+                        <span>选择作物 : </span>
+                        <select class="form-control">
+                            <option>全部</option>
+                        </select>
+                        <a onclick="return false">高级搜索<img src="tools/images/gjbottom.jpg"></a>
+                        <button class="btn btn-primary">搜索</button>
+                        <button class="btn btn-defalut">重置</button>
+                    </div>
+
+                </div>
+
+                <!--<div class="zzcl_analysis2">
+                    todu
+                </div>-->
+
+                <div class="zzcl_analysis3">
+                    <ul class="clearFloat">
+                        <li>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxydk0_10.jpg" width="46"
+                                                         height="46"></td>
+                                    <td height="23">地块数量</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxydk0_08.jpg" width="46"
+                                                         height="46"></td>
+                                    <td height="23">种植面积</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0.00亩</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxydk0_09.jpg" width="46"
+                                                         height="46"></td>
+                                    <td height="23">预计产量</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0.00</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="tjfxTabTp">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#zzcl1" onclick="return false" role="tab"
+                                                  data-toggle="tab">排名图</a></li>
+                            <li><a href="#zzcl2" onclick="return false" role="tab" data-toggle="tab">图表</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="zzcl1">
+                            <div class="cm_pmtCon">
+                                <P>产量统计分析</P>
+                            </div>
+
+                            <!--<div class="cm_pmtZhu">
+                                <highchart config="getXQCLanalysisChart"
+                                           style="width: 100%;height: 100%;overflow: auto"></highchart>
+                            </div>-->
+                            <div>
+                                <p><strong>暂无数据!</strong></p>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="zzcl2">
+                            <div>
+                                <div>
+                                    <img src="tools/images/farmingIco20.png">
+                                </div>
+                                <div>
+                                    <p>很遗憾，没有查询到有关数据</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="缺口产量查询分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">缺口产量查询分析</span>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="农资投入品统计分析">
+                <div>
+                    <div class="pageTop_nav">
+                        <span class="analysis_pageTop_font">农资投入品统计分析</span>
+                    </div>
+                    <div class="form-inline nzAnalyze">
+                        <div>
+                            <label>日期选择: </label>
+                            <label class="radio" ng-click="querySwitch('日')">
+                                <input type="radio" value="按日" name="analysisi_radio1" checked>
+                                按日
+                            </label>
+                            <label class="radio" ng-click="querySwitch('月')">
+                                <input type="radio" value="按月" name="analysisi_radio1">
+                                按月
+                            </label>
+                            <label class="radio" ng-click="querySwitch('年')">
+                                <input type="radio" value="按年" name="analysisi_radio1">
+                                按年
+                            </label>
+                        </div>
+
+                        <div>
+                            <span>开始时间: </span>
+
+                            <div class='input-group date datetimepicker1' date-picker>
+                                <input type='text' class="form-control"/>
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
+                            </div>
+                            <span style="margin-left: 8px">结束时间: </span>
+
+                            <div class='input-group date datetimepicker1' date-picker>
+                                <input type='text' class="form-control"/>
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
+                            </div>
+                        </div>
+
+                        <div class="monitor2_content_left">
+                            <span>日期: </span>
+                            <select class="form-control" style="width: 126px;">
+                                <option value="">2016</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                                <option>2020</option>
+                            </select>
+                            <span>年</span>
+
+                        </div>
+
+                        <div>
+                            <select class="form-control" style="width: 126px;">
+                                <option value="">01</option>
+                                <option>02</option>
+                                <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                            <span>月</span>
+                        </div>
+                    </div>
+
+                    <div class="form-inline" style="margin: 25px 0">
+                        <span>农资选择: &nbsp;</span>
+                        <select class="form-control" style="width: 200px;margin-right: 45px">
+                            <option value="">全部</option>
+                            <option>农药</option>
+                            <option>肥料</option>
+                            <option>其他</option>
+                        </select>
+                        <span>地块选择: &nbsp;</span>
+                        <select class="form-control" style="width: 200px;">
+                            <option value="">全部</option>
+                        </select>
+                    </div>
+
+                    <div class="form-inline">
+                        <span>作物选择: &nbsp;</span>
+                        <select class="form-control" style="width: 200px;margin-right: 45px">
+                            <option value="">全部</option>
+                            <option>大黄瓜</option>
+                            <option>油菜</option>
+                        </select>
+                        <span>使用人: &nbsp;</span>
+                        <select class="form-control" style="width: 126px;">
+                            <option value="">全部</option>
+                        </select>
+                        <button class="btn btn-primary" style="margin: 0 20px 0 40px; width: 65px;">搜索</button>
+                        <button class="btn btn-default" style="width: 65px">重置</button>
+                    </div>
+
+                    <div style="padding-top: 20px;">
+                        <div class="tjfxTabTp">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#Ranking2" onclick="return false" role="tab"
+                                                      data-toggle="tab">排名图</a></li>
+                                <li><a href="#Details2" onclick="return false" role="tab" data-toggle="tab">详情表</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Ranking2">
+                                <div class="cm_pmtCon">
+                                    <table class="cm_userHd">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <span>农资种类</span>
+                                                <em style="color: #2867cf"><span>0</span></em>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="cm_pmtZhu">
+                                    <highchart config="getNZTRPanalysisChart"
+                                               style="width: 100%;height: 100%;overflow: auto"></highchart>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="Details2">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div ng-switch-when="环境区域管理排名分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">环境区域管理排名分析</span>
+                </div>
+
+                <div class="hjqygl_div1 form-inline">
+                    <span>分区: &nbsp;</span>
+                    <select class="form-control" style="width: 216px;">
+                        <option>全部</option>
+                    </select>
+
+                    <select class="form-control">
+                        <option>健康指数</option>
+                        <option>空气温度</option>
+                        <option>空气湿度</option>
+                        <option>土壤温度</option>
+                        <option>光照强度</option>
+                    </select>
+
+                    <button class="btn btn-primary" style="margin: 0 28px 0 260px;">搜索</button>
+                    <button class="btn btn-default">重置</button>
+                </div>
+
+                <div class="hjqygl_div2">
+                    <div>
+                        <img src="tools/images/fxyimg_22.jpg">
+                        <span>统计表</span>
+                    </div>
+                    <div>
+                        <highchart></highchart>
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="环境检测历史记录">
+
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">环境检测历史记录</span>
+                </div>
+
+                <div style="margin-top: 23px;">
+                    <div class="form-inline">
+                        <span>地块 : </span>
+                        <select class="form-control">
+                            <option class="selected">传感器编号</option>
+                            <option>地块</option>
+                        </select>
+                        <select class="form-control" style="margin: 0 5px;">
+                            <option class="selected">无可选择项目</option>
+                        </select>
+                        <span>日期选择 : &nbsp;&nbsp;</span>
+
+                        <div class='input-group date datetimepicker1' date-picker>
+                            <input type='text' class="form-control"/>
+                                <span class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </span>
+                        </div>
+
+                        <span>__</span>
+
+                        <div class='input-group date datetimepicker1' date-picker>
+                            <input type='text' class="form-control"/>
+                                <span class="input-group-addon">
+                                    <span class="fa fa-calendar"></span>
+                                </span>
+                        </div>
+
+                        <button type="button" style="width: 69px;margin-left: 50px" class="btn btn-primary">搜索</button>
+                        <button type="button" style="width: 69px;" class="btn btn-default">导出</button>
+                    </div>
+                </div>
+
+                <div style="padding-top: 20px;">
+                    <div class="tjfxTabTp">
+                        <ul class="nav nav-tabs" role="tablist" id="myTab1">
+                            <li class="active"><a href="#Ranking1" onclick="return false" role="tab"
+                                                  data-toggle="tab">折线图</a></li>
+                            <li><a href="#Details1" onclick="return false" role="tab" data-toggle="tab">详情表</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="Ranking1">
+                            <div style="padding: 30px 0;overflow: hidden">
+                                <div class="monitor2_content_left">
+                                    <select class="form-control" style="width: 140px;">
+                                        <option checked>空气温度</option>
+                                        <option>空气湿度</option>
+                                        <option>土壤温度</option>
+                                        <option>土壤湿度</option>
+                                        <option>二氧化碳</option>
+                                        <option>光照</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="Details1">
+                            <div class="ulAllocation">
+                                <ul ul-allocation>
+                                    <li>地块</li>
+                                    <li>传感器编号</li>
+                                    <li>空气温度</li>
+                                    <li>空气湿度</li>
+                                    <li>土壤温度</li>
+                                    <li>土壤湿度</li>
+                                    <li>土壤PH</li>
+                                    <li>土壤EC值</li>
+                                    <li>二氧化碳</li>
+                                    <li>光照</li>
+                                    <li>监测时间</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="透明管理">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">透明管理</span>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="自动查棚">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">自动查棚</span>
+                </div>
+
+                <div class="cPTop">
+                    <div class="form-inline">
+                        <span>选择分区</span>
+                        <select class="form-control">
+                            <option class="selected">无可选择项目</option>
+                        </select>
+                        <span>选择区域</span>
+                        <select class="form-control">
+                            <option class="selected">全部</option>
+                        </select>
+                        <span>选择作物</span>
+                        <select class="form-control">
+                            <option class="selected">全部</option>
+                        </select>
+
+                        <button type="button" class="btn btn-primary">查棚</button>
+                        <button type="button" class="btn btn-default">导出</button>
+                    </div>
+                </div>
+
+                <div class="farm_manage_left_centent">
+                    <div class="ulAllocation">
+                        <ul ul-allocation>
+                            <li>区域</li>
+                            <li>种植作物</li>
+                            <li>空气温度</li>
+                            <li>空气湿度</li>
+                            <li>土壤温度</li>
+                            <li>土壤湿度</li>
+                            <li>二氧化碳</li>
+                            <li>光照</li>
+                            <li>作物生长状况</li>
+                            <li>环境评价</li>
+                        </ul>
+                    </div>
+
+                    <div style="background-color: #fcfcfc">
+                        <div>
+                            <div>
+                                <img src="tools/images/farmingIco20.png"/>
+                            </div>
+                            <div>
+                                <p>很遗憾，没有相关数据</p>
+
+                                <p style="line-height: 26px">您可以通过选择分区，区域或作物来及时查看区域的生产现状，快去跟进吧！</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div ng-switch-when="人员考核">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">人员考核</span>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="订单金额统计分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">订单金额统计分析</span>
+                </div>
+
+                <div class="clearFloat crktj_analysis1">
+                    <ul class="clearFloat crktj_ul" crktj-li-active="">
+                        <li style="padding-left: 0;"><span>最近7天</span></li>
+                        <li><span>最近30天</span></li>
+                        <li><span>当年年份</span></li>
+                    </ul>
+
+                    <div class="form-inline crktj_div1">
+                        <span>日期选择: &nbsp;</span>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio" checked>按日
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按月
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按年
+                        </label>
+                    </div>
+
+                    <div class="crktj_div2">
+                        <div class="form-inline">
+                            <span>日期类型: </span>
+                            <select class="form-control">
+                                <option>订单签收时间</option>
+                                <option>下单时间</option>
+                                <option>订单配送时间</option>
+                            </select>
+                            <span>客户类型: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                        </div>
+
+                        <div class="form-inline">
+                            <span>销售人: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                            <span>支付类型: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                                <option>货到付款</option>
+                                <option>转账</option>
+                                <option>礼品转账</option>
+                            </select>
+                        </div>
+
+                        <div class="form-inline" style="margin-top: 26px">
+                            <span>订单类型: </span>
+                            <select class="form-control">
+                                <option>全部订单</option>
+                                <option>普通订单</option>
+                                <option>采摘订单</option>
+                            </select>
+                            <button class="btn btn-primary" style="margin-right: 8px;">搜索</button>
+                            <button class="btn btn-default">重置</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="zzcl_analysis3">
+                    <ul class="clearFloat">
+                        <li>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxydx_03.jpg" width="46" height="46"></td>
+                                    <td height="23">销售总额</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0 元</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxyxs_05.jpg" width="46" height="46"></td>
+                                    <td height="23">销售数量</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0 单</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxydk_07.jpg" width="46" height="46"></td>
+                                    <td height="23">客单值</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0.0 元</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="商品销售统计分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">商品销售统计分析</span>
+                </div>
+
+                <div class="clearFloat crktj_analysis1">
+                    <ul class="clearFloat crktj_ul" crktj-li-active="">
+                        <li style="padding-left: 0;"><span>最近7天</span></li>
+                        <li><span>最近30天</span></li>
+                        <li><span>当年年份</span></li>
+                    </ul>
+
+                    <div class="form-inline crktj_div1">
+                        <span>日期选择: &nbsp;</span>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio" checked>按日
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按月
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按年
+                        </label>
+                    </div>
+
+                    <div class="crktj_div2">
+                        <div class="form-inline">
+                            <span>选择作物: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                            <span>客户类型: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                            <button class="btn btn-primary" style="margin-right: 8px;">搜索</button>
+                            <button class="btn btn-default">重置</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="zzcl_analysis3" style="width: 100%;">
+                    <ul class="clearFloat">
+                        <li style="width: 20%">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxydsp_03.jpg" width="46" height="46"></td>
+                                    <td height="23">商品销售总额</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0 元</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li style="width: 20%">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxyxs_05.jpg" width="46" height="46"></td>
+                                    <td height="23">商品销售数量</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0 单</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li style="width: 20%">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxypj_07.jpg" width="46" height="46"></td>
+                                    <td height="23">商品平均价格</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0.0 元</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+
+                        <li style="width: 20%">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxysp_09.jpg" width="46" height="46"></td>
+                                    <td height="23">商品种类</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0 种</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+
+                        <li style="width: 20%">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td rowspan="2"><img src="tools/images/fxypj_07.jpg" width="46" height="46"></td>
+                                    <td height="23">商品销售种类</td>
+                                </tr>
+                                <tr>
+                                    <td height="16">0 种</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="crktj_analysis2">
+                    <div>
+                        <img src="tools/images/fxyimg_22.jpg">
+                        <span>品种销售额统计趋势</span>
+                    </div>
+
+                    <div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="客户购买量排名">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">客户购买量排名</span>
+                </div>
+
+                <div class="clearFloat crktj_analysis1">
+                    <ul class="clearFloat crktj_ul" crktj-li-active="">
+                        <li style="padding-left: 0;"><span>最近7天</span></li>
+                        <li><span>最近30天</span></li>
+                        <li><span>当年年份</span></li>
+                    </ul>
+
+                    <div class="form-inline crktj_div1">
+                        <span>日期选择: &nbsp;</span>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio" checked>按日
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按月
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按年
+                        </label>
+                    </div>
+
+                    <div class="crktj_div2">
+                        <div class="form-inline">
+                            <span>客户类型: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                            <span>客户: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                            <button class="btn btn-primary" style="margin-right: 8px;">搜索</button>
+                            <button class="btn btn-default">重置</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div ng-switch-when="采收量查询">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">采收量查询</span>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="需求量与采收量对比分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">需求量与采收量对比分析</span>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="出入库统计分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">出入库统计分析</span>
+                </div>
+
+                <div class="clearFloat crktj_analysis1">
+                    <ul class="clearFloat crktj_ul" crktj-li-active="">
+                        <li style="padding-left: 0;"><span>最近7天</span></li>
+                        <li><span>最近30天</span></li>
+                        <li><span>当年年份</span></li>
+                    </ul>
+
+                    <div class="form-inline crktj_div1">
+                        <span>日期选择: &nbsp;</span>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio" checked>按日
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按月
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按年
+                        </label>
+                        <button class="btn btn-primary">搜索</button>
+                        <button class="btn btn-default">导出</button>
+                    </div>
+
+                    <div class="crktj_div2">
+                        <div class="form-inline">
+                            <span>仓库选择 : </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                            <span>出入库类型 : </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                                <option>入库</option>
+                                <option>调拨入库</option>
+                                <option>采购入库</option>
+                                <option>生产入库</option>
+                                <option>退货入库</option>
+                                <option>出库</option>
+                                <option>调拨出库</option>
+                                <option>销售出库</option>
+                                <option>生产出库</option>
+                                <option>报损出库</option>
+                            </select>
+                        </div>
+
+                        <div class="form-inline">
+                            <span>仓库选择 : </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                            <span>出入库类型 : </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="crktj_analysis2">
+                    <div>
+                        <img src="tools/images/fxyimg_22.jpg">
+                        <span>统计表</span>
+                    </div>
+
+                    <div>
+                        <p>出库操作记录</p>
+
+                        <div>
+                            <ul ul-allocation="" class="clearFloat">
+                                <li>物料名称</li>
+                                <li>物料编号</li>
+                                <li>库房名称</li>
+                                <li>类型</li>
+                                <li>经办人</li>
+                                <li>数量</li>
+                                <li>规格</li>
+                                <li>等级</li>
+                                <li>操作日期</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="库存(物料)流水统计分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">库存(物料)流水统计分析</span>
+                </div>
+
+                <div class="clearFloat crktj_analysis1">
+                    <ul class="clearFloat crktj_ul" crktj-li-active="">
+                        <li style="padding-left: 0;"><span>最近7天</span></li>
+                        <li><span>最近30天</span></li>
+                        <li><span>当年年份</span></li>
+                    </ul>
+
+                    <div class="form-inline crktj_div1">
+                        <span>日期选择: &nbsp;</span>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio" checked>按日
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按月
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按年
+                        </label>
+                    </div>
+
+                    <div class="crktj_div2">
+                        <div class="form-inline">
+                            <span>仓库选择: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                            <button class="btn btn-primary" style="margin-right: 18px;">搜索</button>
+                        </div>
+
+                        <div class="form-inline">
+                            <span>选择作物: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="crktj_analysis2">
+                    <div>
+                        <img src="tools/images/fxyimg_22.jpg">
+                        <span>统计表</span>
+                    </div>
+
+                    <div>
+                        <div>
+                            <ul ul-allocation="" class="clearFloat">
+                                <li>ID</li>
+                                <li>物料编号</li>
+                                <li>物料名称</li>
+                                <li>规格</li>
+                                <li>库房名称</li>
+                                <li>入库数量</li>
+                                <li>入库金额</li>
+                                <li>出库数量</li>
+                                <li>出库金额</li>
+                                <li>结余数量</li>
+                                <li>结余金额</li>
+                                <li>记录日期</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="包装损耗统计分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">包装损耗统计分析</span>
+                </div>
+
+                <div class="clearFloat crktj_analysis1">
+                    <ul class="clearFloat crktj_ul" crktj-li-active="">
+                        <li style="padding-left: 0;"><span>最近7天</span></li>
+                        <li><span>最近30天</span></li>
+                        <li><span>当年年份</span></li>
+                    </ul>
+
+                    <div class="form-inline crktj_div1">
+                        <span>日期选择: &nbsp;</span>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio" checked>按日
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按月
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rektj_radio">按年
+                        </label>
+                    </div>
+
+                    <div class="crktj_div2">
+                        <div class="form-inline">
+                            <span>仓库选择: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+
+                            <span>选择物料: </span>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                            <button class="btn btn-primary" style="margin-right: 18px;">搜索</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="crktj_analysis2">
+                    <div>
+                        <img src="tools/images/fxyimg_22.jpg">
+                        <span>统计表</span>
+                    </div>
+
+                    <div>
+                        <div>
+                            <ul ul-allocation="" class="clearFloat">
+                                <li>序号</li>
+                                <li>物料编号</li>
+                                <li>物料名称</li>
+                                <li>物料批次</li>
+                                <li>规格</li>
+                                <li>库房名称</li>
+                                <li>入库数量</li>
+                                <li>出库数量</li>
+                                <li>库存剩余量</li>
+                                <li>商品入库总量</li>
+                                <li>损耗率</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="履历使用统计分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">履历使用统计分析</span>
+                </div>
+            </div>
+
+            <div ng-switch-when="履历生成量统计分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">履历生成量统计分析</span>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="履历生成量按品种统计分析">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">履历生成量按品种统计分析</span>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="履历访问量按品种统计">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">履历访问量按品种统计</span>
+                </div>
+
+            </div>
+
+            <div ng-switch-when="履历访问量查询">
+                <div class="pageTop_nav">
+                    <span class="analysis_pageTop_font">履历访问量查询</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

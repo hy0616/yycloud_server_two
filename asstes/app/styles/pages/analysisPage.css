@@ -1,0 +1,432 @@
+.analysis{
+    zoom: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.analysis_left{
+    float: left;
+    width: 12%;
+    height: 100%;
+    min-height: 760px;
+    padding-top: 30px;
+    border-right: 1px solid #e1e4eb;
+}
+
+.analysis_left h2, .analysis_left li{
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.analysis_left h2{
+    height: 30px;
+    line-height: 30px;
+    color: #000;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.analysis_left ul{
+    display: none;
+}
+
+.analysis_left li{
+    height: 34px;
+    line-height: 34px;
+    color: #525252;
+    padding-left: 32px;
+}
+
+.analysis_left_li_active{
+    background: url("../tools/images/levelMenu3_hv.jpg")no-repeat;
+    padding-left: 26px!important;
+    margin-left: 6px;
+    color: #fff!important;
+}
+
+.analysis_left img{
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+}
+
+.analysis_right{
+    float: left;
+    width: 87%;
+    padding: 0 30px;
+}
+
+.analysis_pageTop_font{
+    font-size: 16px;
+    color: #525252;
+    font-weight: normal
+}
+
+.analysisCheckUl{
+    height: 46px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #DBDBDB;
+    overflow: hidden;
+}
+
+.analysisCheckUl li{
+    line-height: 31px;
+    float: left;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+.analysisCheckUl input{
+    margin-top: 0;
+    position: relative;
+    top: 4px;
+    zoom: 160%;
+    background: rgb(255, 255, 255);
+    border: 0px;
+    cursor: pointer;
+}
+
+.analysisCheckUl a{
+    width: 67px;
+    height: 31px;
+    font-weight: 400;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.tjfxTabTp a{
+    color: #525252;
+}
+
+.cm_pmtCon{
+    padding-top: 40px;
+    padding-bottom: 26px;
+}
+
+.cm_pmtCon em{
+    font-size: 20px;
+    padding: 0 50px 0 10px;
+    font-weight: bold
+}
+
+.cm_userHd{
+    font-family: "宋体";
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.cm_xqbCon {
+    width: 99%;
+    height: 300px;
+    overflow: scroll;
+    padding-top: 40px;
+}
+
+.tableXqb{
+    width: 100%;
+}
+
+.tableXqb thead td {
+    background: #e0f1fe none repeat scroll 0 0;
+}
+.tableXqb td {
+    border: 1px solid #d1e2f0;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+
+/*----------------------------------------------------------*/
+
+.ulAllocation{
+    clear: both;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 18px;
+    border: 1px solid #dddddd;
+    background: #f0f5fb;
+}
+
+.ulAllocation li{
+    float: left;
+    text-align: center;
+}
+
+.cPTop{
+    margin-top: 23px;
+}
+
+.cPTop>div select{
+    width: 220px!important;
+}
+
+.cPTop>div span{
+    margin-left: 8px;
+}
+
+.cPTop>div button{
+    width: 69px;
+    margin-left: 10px
+}
+
+.nzAnalyze{
+    margin-top: 30px;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+}
+
+.nzAnalyze>div{
+    float: left;
+}
+
+.nzAnalyze>div:first-child label{
+    margin-right: 26px;
+}
+
+.nzAnalyze>div:nth-child(3), .nzAnalyze>div:nth-child(4){
+    display: none;
+}
+
+/*------------------------  出入库统计分析-------------------*/
+
+
+.crktj_analysis1{
+    padding-bottom: 18px;
+    border-bottom: 1px solid #CFE3F3;
+}
+
+.crktj_ul li{
+    float: left;
+    color: #4970B6;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 15px;
+    border-right: 1px solid #4970B6;
+}
+
+.crktj_ul{
+    margin: 23px 0;
+}
+
+.crktj_ul span{
+    cursor: pointer;
+}
+
+.crkti_li_active{
+    padding: 2px 3px;
+    color: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #3480CB;
+}
+
+.crktj_div1 label{
+    margin-right: 30px;
+}
+
+.crktj_div1 button{
+    width: 66px;
+    margin-left: 13px;
+}
+
+.crktj_div2 select{
+    width: 218px!important;
+    margin-right: 40px;
+}
+
+.crktj_div2>div:first-child select{
+    margin: 30px 40px 30px 0;
+}
+
+.crktj_analysis2{
+    margin-top: 15px;
+}
+
+.crktj_analysis2>div:first-child{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #C5C5C5;
+}
+
+.crktj_analysis2>div:nth-child(2){
+    margin-top: 46px;
+    text-align: center;
+    border: 1px solid #DDDDDD;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.crktj_analysis2>div:nth-child(2) p{
+    height: 43px;
+    line-height: 43px;
+    margin-bottom: 0;
+    background: #F0F5FB;
+}
+
+.crktj_analysis2>div:nth-child(2)>div{
+    background: #FCFCFC;
+    border-top: 1px solid #DDDDDD;
+}
+
+.crktj_analysis2>div:nth-child(2)>div:hover{
+    background: #ecf7e6;
+}
+
+.crktj_analysis2>div:nth-child(2)>div li{
+    float: left;
+}
+
+.crktj_analysis2>div:nth-child(2)>div ul{
+    height: 30px;
+    line-height: 30px;
+}
+
+/*----------------------需求产量查询分析------------------------------*/
+
+.xqcl_analysis{
+    margin-top: 17px;
+    margin-bottom: 33px;
+}
+
+.xqcl_div1{
+    margin-top: 20px;
+}
+
+.xqcl_div1 select{
+    width: 200px!important;
+}
+
+/*-------------------种植产量查询分析---------------------------------*/
+
+.zzcl_analysis1{
+    margin-top: 17px;
+}
+
+.zzcl_div1{
+    margin-top: 33px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #CFE3F3;
+}
+
+.zzcl_div1 select{
+    width: 200px!important;
+    margin-right: 23px;
+}
+
+.zzcl_div1 a{
+    color: #4c4c4c;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.zzcl_div1 button{
+    width: 66px;
+    margin-left: 20px;
+}
+
+.zzcl_analysis3{
+    width: 65%;
+    margin: 30px auto;
+}
+
+.zzcl_analysis3 ul{
+    border-top: 1px solid #cecece;
+    border-right: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+}
+
+.zzcl_analysis3 li{
+    width: 33%;
+    float: left;
+    height: 68px;
+    padding-top: 13px;
+    padding-left: 6px;
+    border-left: 1px solid #cecece;
+    font-size: 16px;
+    color: #0a2435;
+}
+
+#zzcl1 p{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 160px;
+}
+
+#zzcl2>div{
+    width: 508px;
+    margin: 130px auto;
+    text-align: center;
+}
+
+#zzcl2 p{
+    margin: 33px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+/*-----------------------采购合同汇总分析-----------------------*/
+
+.cght_analysis1{
+    margin-top: 17px;
+    padding-bottom: 21px;
+    border-bottom: 1px solid #CFE3F3;
+}
+
+.cght_analysis1 select{
+    width: 100px!important;
+    margin-right: 18px;
+}
+
+.cght_analysis1 button{
+    width: 70px;
+}
+
+.cght_analysis2{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #CFE3F3;
+}
+
+.cght_analysis2 li{
+    float: left;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 20px 15px 0;
+}
+
+.cght_analysis2 li span{
+    display: block;
+    padding: 4px 10px;
+}
+
+.cght_li_active{
+    color: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #3480CB;
+}
+
+/*---------------环境区域管理排名分析-------------------*/
+
+.hjqygl_div1{
+    margin-top: 28px;
+    padding-bottom: 16px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #CFE3F3;
+}
+
+.hjqygl_div1 button{
+    width: 68px;
+}
+
+.hjqygl_div2>div:first-child{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #C5C5C5;
+}
+
+.hjqygl_div2>div:nth-child(2){
+    margin-top: 26px;
+}

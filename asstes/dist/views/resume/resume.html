@@ -1,0 +1,68 @@
+<div style="width:100%;">
+    <div class="right_c" style="min-width:630px;">
+        <!-- 公用头部 开始 -->
+        <div class="r_title clear">
+            <div class="r_t_l fl">履历&nbsp;&gt;&nbsp;&nbsp;<font size="3">履历管理 </font></div>
+            <div class="fr" style="margin-bottom:-1px;">
+                <ul class="cm_resumeList clear" style="margin-bottom:0;">
+                    <li>
+                        <!-- <a href="javascript:void(0)" disabled="true" class="borderBt" style="cursor:default;"><img src="../asset/images/lsll/cm_lsllIco01.jpg"/><span>履历设计</span></a> -->
+                    </li>
+                    <li onclick="changeTabMe(1)"><a href="javascript:return false" class="borderBt butt1" role="tab" data-toggle="tab"
+                                                    style="border-radius:4px 0 0 4px;"><img
+                            src="tools/images/cm_lsllIco01.jpg"><span>履历设计</span></a></li>
+
+                    <li>
+                        <!--lvliyl-ico1.jpg<a href="javascript:void(0)" disabled="true" class="borderBt" style="cursor:default;"><img src="../asset/images/lsll/cm_lsllIco01.jpg"/><span>履历预览</span></a> -->
+                    </li>
+                    <li onclick="changeTabMe(2)"><a href="javascript:return false" class="butt2" role="tab" data-toggle="tab"
+                                                    style="border-radius:0 4px 4px 0;"><img
+                            src="tools/images/lvliyl-ico1.jpg"><span>履历预览</span></a></li>
+
+                    <li>
+                        <a href="javascript:return false"><img src="tools/images/cm_lsllIco02.jpg"><span>履历制作</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:return false"><img src="tools/images/cm_lsllIco05.png"><span>履历追溯</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="cm_designHd clear">
+
+            <div class="search-header-lt">
+                <div class="public-search" style="margin-left: 55px;">
+                    <span class="octicon-search02" onclick="searchName();"></span>
+                    <input id="searchName" class="form-control nw250 srarchfont" placeholder="搜索履历"
+                           style="width:270px;">
+                    <input value="1" name="tabParam" id="tabParam" type="hidden">
+                </div>
+            </div>
+
+            <div class="search-header-rt" id="folderButt" style="display:none">
+                <a class="btn btn-success" href="javascript:;" data-toggle="modal" data-target="#myModal-xj"
+                   onclick="saBegin()">
+                    <img src="/asset/images/newfolder.png" style="margin-right:5px;" height="12" width="15">新建文件夹
+                </a>
+            </div>
+
+            <div style="display:block" class="cm_designHdRt addLl_selt" id="createButt">
+                <div class="btn-group">
+                    <button style="display: none" type="button" class="btn btn-success dropdown-toggle"
+                            data-toggle="dropdown"><span id="Primary">创建模版</span><span class="caret"></span></button>
+
+                </div>
+
+            </div>
+        </div>
+        <!--<div class="logo">
+            <ul>
+                <li class="logo1"><a href=""><img src="tools/images/123.jpg"/></a></li>
+                <li class="logo1"><a href=""><img src="tools/images/123.jpg"/></a></li>
+            </ul>
+            <span class="a12">大棚</span>
+            <span class="a13">农场</span>
+        </div>-->
+    </div>
+</div>

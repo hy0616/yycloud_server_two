@@ -1,0 +1,384 @@
+<div style="padding-ringht: 30px;" ng-controller="orderCtr">
+    <div ng-class="{'oderLeftNav': orderTopNav == '订单管理',
+    'noOderLeftNav': orderTopNav != '订单管理'}">
+        <ul order-left-nav-active>
+            <li>
+                <img src="tools/images/levelMenu50.png"/>
+                <span>全部订单</span>
+                <em>0</em>
+            </li>
+            <li>
+                <img src="tools/images/levelMenu006.png"/>
+                <span>订单已驳回</span>
+                <em>0</em>
+            </li>
+            <li>
+                <img src="tools/images/levelMenu51.png"/>
+                <span>订单待接受</span>
+                <em>0</em>
+            </li>
+            <li>
+                <img src="tools/images/levelMenu51.png"/>
+                <span>订单待审核</span>
+                <em>0</em>
+            </li>
+            <li>
+                <img src="tools/images/levelMenu52.png"/>
+                <span>订单待处理</span>
+                <em>0</em>
+            </li>
+            <li>
+                <img src="tools/images/levelMenu55.png"/>
+                <span>订单已完成</span>
+                <em>0</em>
+            </li>
+            <li>
+                <img src="tools/images/levelMenu56.png"/>
+                <span>订单已删除</span>
+                <em>0</em>
+            </li>
+
+            <li style="min-height: 0;border-bottom: 1px solid #e1e1e1;margin: 10px 0;"></li>
+
+            <li>
+                <img src="tools/images/levelMenu57.png"/>
+                <span>退货单已驳回</span>
+                <em>0</em>
+            </li>
+            <li>
+                <img src="tools/images/levelMenu57.png"/>
+                <span>订单待退货</span>
+                <em>0</em>
+            </li>
+            <li>
+                <img src="tools/images/levelMenu58.png"/>
+                <span>订单已退货</span>
+                <em>0</em>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-class="{'orderForm': orderTopNav == '订单管理',
+    'noOrderForm': orderTopNav != '订单管理'}">
+        <div class="pageTop_nav clearFloat">
+            <div style="float: left">
+                <span>订单 > </span>
+                <span ng-if="orderTopNav != '订单管理'" style="font-size: 16px;">{{orderTopNav}}</span>
+                <span ng-if="orderTopNav == '订单管理'" style="font-size: 16px;">{{orderLeftNav}}</span>
+            </div>
+            <div class="cs_header">
+            <span ng-class="{'cs_header_active':orderTopNav == '订单管理'}" ng-click="orderform()">
+                <img src="tools/images/resumeIco50.jpg"/>
+                <span>订单管理</span>
+            </span>
+            <span ng-class="{'cs_header_active':orderTopNav == '客户管理'}" ng-click="clientele()">
+                <img src="tools/images/resumeIco51.jpg"/>
+                <span>客户管理</span>
+            </span>
+            <span ng-class="{'cs_header_active':orderTopNav == '会员卡管理'}" ng-click="member()">
+                <img src="tools/images/resumeIco51.jpg"/>
+                <span>会员卡管理</span>
+            </span>
+            <span ng-class="{'cs_header_active':orderTopNav == '红包管理'}" ng-click="packet()">
+                <img src="tools/images/resumeIco150.jpg"/>
+                <span>红包管理</span>
+            </span>
+            </div>
+        </div>
+
+        <div ng-switch="orderTopNav">
+            <div ng-switch-default="订单管理">
+                <div ng-switch="orderLeftNav" class="orderContent">
+
+                    <div ng-switch-default="全部订单">
+                        <div>
+                            <div class="orderContent1" order-content-span-active>
+                                <em>排序</em>
+                                <span>下单时间</span>
+                                <span>配送时间</span>
+                                <span>支付状态</span>
+                                <span>订单状态</span>
+                            </div>
+                            <div class="orderContent2">
+                                <div class="form-inline" style="float: left">
+                                    <input type="text" class="form-control" placeholder="请输入订单编号/收货人/销售人/手机"/>
+                                    <button type="button" class="btn btn-primary">搜索</button>
+                                    <a class="orderContent2a" screen>筛选</a>
+                                </div>
+                                <div style="float: right">
+                                    <button type="button" class="btn btn-primary">添加订单</button>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">导入导出
+                                            <span class="caret"></span></a>
+                                        <ul class="dropdown-menu orderContent2ul" role="menu">
+                                            <li>导出订单</li>
+                                            <li>导入订单</li>
+                                            <li>导出理货详情</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="orderContent3">
+                                <div class="form-inline" style="margin-bottom: 18px">
+                                    <span>日期类型</span>
+                                    <select class="form-control">
+                                        <option>订单配送时间</option>
+                                        <option value="">订单时间</option>
+                                        <option>订单签收时间</option>
+                                        <option>冻结时间</option>
+                                    </select>
+                                    <div class='input-group date datetimepicker1' date-picker>
+                                        <input type='button' class="form-control"/>
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                    </div>
+                                    <span>-</span>
+                                    <div class='input-group date datetimepicker1' date-picker>
+                                        <input type='button' style="margin: 0" class="form-control"/>
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                    </div>
+                                    <span style="margin-left: 5px">客户类型</span>
+                                    <select class="form-control">
+                                        <option value="">全部</option>
+                                    </select>
+                                </div>
+                                <div class="form-inline">
+                                    <span>订单类型</span>
+                                    <select class="form-control">
+                                        <option>全部</option>
+                                        <option>普通订单</option>
+                                        <option>采摘订单</option>
+                                    </select>
+                                    <span>支付状态</span>
+                                    <select class="form-control">
+                                        <option>全部</option>
+                                        <option>已支付</option>
+                                        <option>未支付</option>
+                                    </select>
+                                    <span>订单状态</span>
+                                    <select class="form-control">
+                                        <option value="">全部订单</option>
+                                        <option>待审核未通过</option>
+                                        <option>订单待接受</option>
+                                        <option>订单待审核</option>
+                                        <option>订单待处理</option>
+                                        <option>订单理货中</option>
+                                        <option>订单待发货</option>
+                                        <option>订单已配送</option>
+                                        <option>订单已完成</option>
+                                        <option>已取消订单</option>
+                                        <option>订单已退货</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div ng-switch-when="订单已驳回">
+
+                        <div class="orderContent1" order-content-span-active>
+                            <em>排序</em>
+                            <span>下单时间</span>
+                            <span>配送时间</span>
+                            <span>支付状态</span>
+                            <span>订单状态</span>
+                        </div>
+                        <div class="orderContent2">
+                            <div class="form-inline" style="float: left">
+                                <input type="text" class="form-control" placeholder="请输入订单编号/收货人/销售人/手机"/>
+                                <button type="button" class="btn btn-primary">搜索</button>
+                            </div>
+                            <div style="float: right">
+                                <button type="button" class="btn btn-defalut">导出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-switch-when="订单待接受">
+                        <div class="orderContent1" order-content-span-active>
+                            <em>排序</em>
+                            <span>下单时间</span>
+                            <span>配送时间</span>
+                            <span>支付状态</span>
+                        </div>
+                        <div class="orderContent2">
+                            <div class="form-inline" style="float: left">
+                                <input type="text" class="form-control" placeholder="请输入订单编号/收货人/销售人/手机"/>
+                                <button type="button" class="btn btn-primary">搜索</button>
+                            </div>
+                            <div style="float: right">
+                                <button type="button" class="btn btn-defalut">导出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-switch-when="订单待审核">
+                        <div class="orderContent1" order-content-span-active>
+                            <em>排序</em>
+                            <span>下单时间</span>
+                            <span>配送时间</span>
+                            <span>支付状态</span>
+                            <span>订单状态</span>
+                        </div>
+                        <div class="orderContent2">
+                            <div class="form-inline" style="float: left">
+                                <input type="text" class="form-control" placeholder="请输入订单编号/收货人/销售人/手机"/>
+                                <button type="button" class="btn btn-primary">搜索</button>
+                            </div>
+                            <div style="float: right">
+                                <button type="button" class="btn btn-defalut">导出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-switch-when="订单待处理">
+                        <div class="orderContent1" order-content-span-active>
+                            <em>排序</em>
+                            <span>下单时间</span>
+                            <span>配送时间</span>
+                            <span>支付状态</span>
+                            <span>订单状态</span>
+                        </div>
+                        <div class="orderContent2">
+                            <div class="form-inline" style="float: left">
+                                <input type="text" class="form-control" placeholder="请输入订单编号/收货人/销售人/手机"/>
+                                <button type="button" class="btn btn-primary">搜索</button>
+                            </div>
+                            <div style="float: right">
+                                <button type="button" class="btn btn-defalut">导出</button>
+                                <button type="button" class="btn btn-pirmary">批量导出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-switch-when="订单已完成">
+                        <div class="orderContent1" order-content-span-active>
+                            <em>排序</em>
+                            <span>下单时间</span>
+                            <span>配送时间</span>
+                            <span>支付状态</span>
+                            <span>订单状态</span>
+                        </div>
+                        <div class="orderContent2">
+                            <div class="form-inline" style="float: left">
+                                <input type="text" class="form-control" placeholder="请输入订单编号/收货人/销售人/手机"/>
+                                <button type="button" class="btn btn-primary">搜索</button>
+                            </div>
+                            <div style="float: right">
+                                <button type="button" class="btn btn-defalut">导出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-switch-when="订单已删除">
+                        <div class="orderContent1" order-content-span-active>
+                            <em>排序</em>
+                            <span>下单时间</span>
+                            <span>配送时间</span>
+                            <span>支付状态</span>
+                            <span>订单状态</span>
+                        </div>
+                        <div class="orderContent2">
+                            <div class="form-inline" style="float: left">
+                                <input type="text" class="form-control" placeholder="请输入订单编号/收货人/销售人/手机"/>
+                                <button type="button" class="btn btn-primary">搜索</button>
+                            </div>
+                            <div style="float: right">
+                                <button type="button" class="btn btn-defalut">导出</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-switch-when="退货单已驳回">
+                        <div class="form-inline orderContent2">
+                            <input type="text" class="form-control" placeholder="请输入订单编号/收货人/销售人/手机"/>
+                            <button type="button" class="btn btn-primary">搜索</button>
+                        </div>
+                    </div>
+                    <div ng-switch-when="订单待退货">
+                        <div class="form-inline orderContent2">
+                            <input type="text" class="form-control" placeholder="请输入订单编号/收货人/销售人/手机"/>
+                            <button type="button" class="btn btn-primary">搜索</button>
+                        </div>
+                    </div>
+                    <div ng-switch-when="订单已退货">
+                        <div class="form-inline orderContent2">
+                            <input type="text" class="form-control" placeholder="请输入订单编号/收货人/销售人/手机"/>
+                            <button type="button" class="btn btn-primary">搜索</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div ng-switch-when="客户管理">
+                <div class="noOrderFormContent1">
+                    <div style="float: left;" class="form-inline">
+                        <input type="text" class="form-control"/>
+                        <button type="button" class="btn btn-primary">搜索</button>
+                    </div>
+                    <div style="float: right">
+                        <button type="button" class="btn btn-success">添加</button>
+                        <button type="button" class="btn btn-default">导入</button>
+                        <button type="button" class="btn btn-default">导出</button>
+                    </div>
+                </div>
+                <div class="orderTable">
+                    <ul ul-allocation>
+                        <li>客户编号</li>
+                        <li>客户姓名</li>
+                        <li>销售人</li>
+                        <li>客户类型</li>
+                        <li>联系电话</li>
+                        <li>住宅地址</li>
+                        <li>注册时间</li>
+                        <li>会员卡数量</li>
+                        <li>操作</li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-switch-when="会员卡管理">
+                <div class="noOrderFormContent1">
+                    <div style="float: left;" class="form-inline">
+                        <input type="text" class="form-control"/>
+                        <button type="button" class="btn btn-primary">搜索</button>
+                    </div>
+                    <div style="float: right">
+                        <button type="button" class="btn btn-success">添加</button>
+                        <button type="button" class="btn btn-default">导入</button>
+                        <button type="button" class="btn btn-default">导出</button>
+                    </div>
+                </div>
+                <div class="orderTable">
+                    <ul ul-allocation>
+                        <li>序号</li>
+                        <li>卡编号</li>
+                        <li>卡种类</li>
+                        <li>有效期</li>
+                        <li>卡状态</li>
+                        <li>绑定会员</li>
+                        <li>操作</li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-switch-when="红包管理">
+                <div class="noOrderFormContent1">
+                    <div style="float: right">
+                        <button type="button" class="btn btn-success">添加</button>
+                    </div>
+                </div>
+                <div class="orderTable">
+                    <ul ul-allocation>
+                        <li>红包名称</li>
+                        <li>面额</li>
+                        <li>数量上限</li>
+                        <li>已领数量</li>
+                        <li>剩余数量</li>
+                        <li>有效期</li>
+                        <li>领取生效日期</li>
+                        <li>领取失效日期</li>
+                        <li>操作</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

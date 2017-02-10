@@ -1,0 +1,39 @@
+<div style="padding: 0 30px;" ng-controller="supplyCtr">
+    <div class="pageTop_nav clearFloat">
+        <div style="float: left">
+            <span>销售 > 供求 > </span>
+            <span style="font-size: 16px;">{{labelNav}}</span>
+        </div>
+        <div class="farm_header">
+            <span ng-class="{'farm_header_active':labelNav == '求购信息'}" ng-click="askMessage()">
+                <img src="tools/images/binghaifz_ico1.jpg"/>
+                <span>求购信息</span>
+            </span>
+            <span ng-class="{'farm_header_active':labelNav == '我的供求'}" ng-click="myDemand()">
+                <img src="tools/images/binghaifz_ico2.jpg"/>
+                <span>我的供求</span>
+            </span>
+        </div>
+    </div>
+
+    <div ng-switch="labelNav">
+        <div ng-switch-default="求购信息">
+            <div class="farm_content">
+                <div class="farm_content_left">
+                    <div>
+
+                    </div>
+
+                </div>
+                <div class="farm_content_right">
+
+                </div>
+            </div>
+        </div>
+
+        <div ng-switch-when="我的供求">
+            <p>2222</p>
+        </div>
+
+    </div>
+</div>

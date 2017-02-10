@@ -1,0 +1,56 @@
+<div style="padding: 0 30px;" ng-controller="plantCtr">
+    <div class="pageTop_nav clearFloat">
+        <div style="float: left">
+            <span>生产 > </span>
+            <span style="font-size: 16px;">{{labelNav}}</span>
+        </div>
+        <div class="farm_header">
+            <span ng-class="{'farm_header_active':labelNav == '种植管理'}" ng-click="plantation()">
+                <img src="tools/images/binghaifz_ico1.jpg"/>
+                <span>种植管理</span>
+            </span>
+            <span ng-class="{'farm_header_active':labelNav == '模型库'}" ng-click="modelBase()">
+                <img src="tools/images/binghaifz_ico2.jpg"/>
+                <span>模型库</span>
+            </span>
+        </div>
+    </div>
+
+    <div ng-switch="labelNav">
+        <div ng-switch-default="种植管理" class="flant_Supervise">
+            <div class="form-inline" style="float: left;">
+                <input type="text" class="form-control" placeholder="搜索种植作物或地块"/>
+                <div order-content-span-active>
+                    <span>全部</span>
+                    <span>当前种植</span>
+                    <span>历史种植</span>
+                    <span>计划种植</span>
+                </div>
+            </div>
+            <div style="float: right">
+                <div class="btn-group">
+                    <a class="btn btn-success dropdown-toggle" data-toggle="dropdown">添加
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu orderContent2ul" style="min-width: 90px" role="menu">
+                        <li>添加</li>
+                        <li>批量添加</li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-defalut">导出</button>
+            </div>
+        </div>
+        <div ng-switch-when="模型库" class="flant_Supervise">
+            <div class="form-inline" style="float: left;">
+                <input type="text" class="form-control" placeholder="请输入搜索条件"/>
+                <div order-content-span-active>
+                    <span>总品种</span>
+                    <span>已选品种</span>
+                </div>
+            </div>
+            <div style="float: right">
+                <button type="button" class="btn btn-success">添加作物</button>
+            </div>
+        </div>
+
+    </div>
+</div>

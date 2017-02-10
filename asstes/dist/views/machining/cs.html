@@ -1,0 +1,183 @@
+<div style="padding: 0 30px;" ng-controller="csCtr">
+    <div class="pageTop_nav clearFloat">
+        <div style="float: left">
+            <span>加工 > 采收 > </span>
+            <span style="font-size: 16px;">{{labelNav}}</span>
+        </div>
+        <div class="cs_header">
+            <span ng-class="{'cs_header_active':labelNav == '采收记录'}" ng-click="record()">
+                <img src="tools/images/caishoujilu01.png"/>
+                <span>采收记录</span>
+            </span>
+            <span ng-class="{'cs_header_active':labelNav == '预采管理'}" ng-click="probable()">
+                <img src="tools/images/yucai01.png"/>
+                <span>预采管理</span>
+            </span>
+            <span ng-class="{'cs_header_active':labelNav == '预售管理'}" ng-click="presell()">
+                <img src="tools/images/yushou01.png"/>
+                <span>预售管理</span>
+            </span>
+        </div>
+    </div>
+
+    <div ng-switch="labelNav">
+        <div ng-switch-default="采收记录" class="record">
+            <div>
+                <div style="float: left" class="form-inline">
+                    <input type="text" class="form-control"/>
+                    <button class="btn btn-primary">搜索</button>
+                </div>
+
+                <div style="float: right">
+                    <button class="btn btn-success">添加</button>
+                    <button class="btn btn-default">导出</button>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <h4>采收记录列表</h4>
+                </div>
+                <div>
+                    <img src="tools/images/farmingIco20.png"/>
+
+                    <em>没有查询到采收记录，请更改搜索条件重新查询！</em>
+
+                    <p style="line-height: 26px">没有采收记录，可能是您的搜索条件没有查到结果，请修改搜索条件重新查询；也可能没有添加采收记录，请耐心等待采收记录添加后再查看！</p>
+                </div>
+            </div>
+        </div>
+        <div ng-switch-when="预采管理" class="probable">
+            <div style="height: 50px">
+                <div style="float: left" class="form-inline">
+                    <span>预采收时间: </span>
+
+                    <div class='input-group date datetimepicker1' date-picker>
+                        <input type='text' class="form-control"/>
+                        <span class="input-group-addon">
+                            <span class="fa fa-calendar"></span>
+                        </span>
+                    </div>
+                    <button class="btn btn-primary">搜索</button>
+                </div>
+
+                <div style="float: right">
+                    <button class="btn btn-success">添加</button>
+                </div>
+            </div>
+
+            <div>
+                <ul ul-allocation>
+                    <li>预采收日期</li>
+                    <li>可采收棚数量</li>
+                    <li>作物种类数量</li>
+                    <li>未来一天总采收量</li>
+                    <li>未来一周总采收量</li>
+                    <li>录入人</li>
+                    <li>录入时间</li>
+                    <li>操作</li>
+                </ul>
+                <div>
+                    <img src="tools/images/farmingIco20.png"/>
+
+                    <em>很遗憾，没有预采信息</em>
+
+                    <p>快来添加吧！</p>
+
+                </div>
+            </div>
+        </div>
+        <div ng-switch-when="预售管理" class="probable">
+
+            <div style="height: 50px">
+                <div style="float: left" class="form-inline"
+                        ng-if="dateConversion == '历史'">
+                    <span>预采收时间: </span>
+
+                    <div class="input-group date datetimepicker1" date-picker>
+                        <input type="text" class="form-control"/>
+                        <span class="input-group-addon">
+                            <span class="fa fa-calendar"></span>
+                        </span>
+                    </div>
+                    <button class="btn btn-primary">搜索</button>
+                </div>
+
+                <div style="float: left" class="form-inline"
+                     ng-if="dateConversion == '今日' || dateConversion == '明日'">
+                    <input type="text" class="form-control" style="width: 350px;" />
+                    <button class="btn btn-primary">搜索</button>
+                </div>
+
+                <div style="float: right" class="btn-group" btn-switch>
+                    <button type="button" ng-click="today()" class="btn btn-default active">今日</button>
+                    <button type="button" ng-click="tomorrow()" class="btn btn-default">明日</button>
+                    <button type="button" ng-click="history()" class="btn btn-default">历史</button>
+                </div>
+            </div>
+
+            <div ng-switch="dateConversion">
+
+                <div ng-switch-default="今日" style="margin: 0">
+                    <ul ul-allocation>
+                        <li>序号</li>
+                        <li>作物名称</li>
+                        <li>等级</li>
+                        <li>当前库存量</li>
+                        <li>今日可采量</li>
+                        <li>未来一周总采收量</li>
+                    </ul>
+                    <div style="margin: 132px auto;">
+                        <img src="tools/images/farmingIco20.png"/>
+
+                        <em>很遗憾，今天没有可售菜品信息</em>
+
+                        <p>每天准确的可售菜品信息，是销售部门掌握菜品出产情况，制定销售目标的重要保证，请产品部门及时更新哦！</p>
+
+                    </div>
+                </div>
+
+                <div ng-switch-when="明日" style="margin: 0">
+                    <ul ul-allocation>
+                        <li>序号</li>
+                        <li>作物名称</li>
+                        <li>等级</li>
+                        <li>明日可采量</li>
+                        <li>未来一周总采收量</li>
+                    </ul>
+                    <div style="margin: 132px auto;">
+                        <img src="tools/images/farmingIco20.png"/>
+
+                        <em>很遗憾，今天没有可售菜品信息</em>
+
+                        <p>每天准确的可售菜品信息，是销售部门掌握菜品出产情况，制定销售目标的重要保证，请产品部门及时更新哦！</p>
+
+                    </div>
+                </div>
+
+                <div ng-switch-when="历史" style="margin: 0">
+                    <ul ul-allocation>
+                        <li>预采收日期</li>
+                        <li>可采收棚数量</li>
+                        <li>作物种类数量</li>
+                        <li>未来一天总采收量</li>
+                        <li>未来一周总采收量</li>
+                        <li>录入人</li>
+                        <li>录入时间</li>
+                        <li>操作</li>
+                    </ul>
+                    <div style="margin: 132px auto;">
+                        <img src="tools/images/farmingIco20.png"/>
+
+                        <em>很遗憾，没有预采信息</em>
+
+                        <p>快来添加吧！</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

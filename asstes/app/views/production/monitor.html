@@ -1,0 +1,263 @@
+<div class="monitor_body" ng-controller="monitorCtr">
+
+    <div class="foldBtn" hide-fold-btn><img src="tools/images/foldBtn.png"></div>
+
+    <div class="monitor_left">
+        <ul>
+            <li>
+                <a>
+                    <img src="tools/images/base_25.png" />
+                    <span>山东寿光大棚</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="monitor_right">
+        <div class="monitor">
+            <div class="monitor1_top">
+                <h2>气象站</h2>
+            </div>
+
+            <div class="monitor_content1">
+                <div class="monitor_content1_left">
+                    <div>
+                        <span>气象站SN:&nbsp;</span>
+                        <select>
+                            <option value="">寿光大棚</option>
+                        </select>
+                    </div>
+                    <div>
+                        <img src="tools/images/2.png"/>
+                        <img src="tools/images/tianqi_img07.png"/>
+                        <span><img src="tools/images/ico_qxzIco2.png"/>27°</span>
+                        <span><img src="tools/images/ico_qxzIco3.png"/>19°</span>
+                    </div>
+                </div>
+                <div class="monitor_content1_right">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td width="50%" height="102"
+                                style="border-right: 1px dashed #c0c0c0;border-bottom: 1px dashed #c0c0c0">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td width="100" align="center">
+                                            <img src="tools/images/ico_qxzIco4.png">
+                                        </td>
+                                        <td>
+                                            <span style="display:block; width:100%;">空气湿度</span>
+                                            <br><em>—%</em>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td width="50%" style="border-bottom: 1px dashed #c0c0c0">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td width="100" align="center">
+                                            <img src="tools/images/ico_qxzIco5.png">
+                                        </td>
+                                        <td>
+                                            <span>光照</span>
+                                            <em>— lux</em><br>
+
+                                            <div style="display:inline-block;">
+                                                <span>辐射</span>
+                                                <em style="line-height:30px;">— w/㎡</em>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" height="102" style="border-right: 1px dashed #c0c0c0;">
+                                <table>
+                                    <tr>
+                                        <td width="100" align="center">
+                                            <img src="tools/images/ico_qxzIco6.png"></td>
+                                        <td><span style="display:block; width:100%;">土壤温度</span><br><em>— °C</em></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="50%">
+                                <table>
+                                    <tr>
+                                        <td width="100" align="center"><img src="tools/images/ico_qxzIco7.png"></td>
+                                        <td><span style="display:block; width:100%;">土壤水分</span><br><em>— %</em></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="monitor_content2">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr>
+                        <td height="122" align="center"><img src="tools/images/img_qxzImg2.png"><br>
+                            <span>风力<em>无</em></span>
+                        </td>
+                        <td height="122" align="center"><img src="tools/images/img_qxzImg3.png"><br>
+                            <span>风向<em>无</em></span>
+                        </td>
+                        <td height="122" align="center"><img src="tools/images/img_qxzImg4.png"><br>
+                            <span>降水量<em>—mm</em></span>
+                        </td>
+                        <td height="122" align="center"><img src="tools/images/img_qxzImg5.png"><br>
+                            <span>露点<em>—%</em></span>
+                        </td>
+                        <td height="122" align="center"><img src="tools/images/img_qxzImg6.png"><br>
+                            <span>二氧化碳<em>—ppm</em></span>
+                        </td>
+                        <td height="122" align="center"><img src="tools/images/img_qxzImg7.png"><br>
+                            <span>气压<em>—hPa</em></span>
+                        </td>
+                        <td height="122" align="center"><img src="tools/images/img_phmg.png"><br>
+                            <span>PH<em>—</em></span>
+                        </td>
+                        <td height="122" align="center"><img src="tools/images/img_ecImg.png"><br>
+                            <span>EC<em>—mS/cm</em></span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="monitor2">
+            <div class="monitor2_top">
+                <span>实时状况</span>
+            </div>
+
+            <div class="monitor2_content">
+                <div style="overflow: hidden">
+                    <div class="monitor2_content_left">
+                        <select>
+                            <option value="">温湿度</option>
+                            <option>二氧化碳</option>
+                            <option>光照</option>
+                            <option>土壤温湿度</option>
+                        </select>
+                    </div>
+
+                    <div class="monitor2_content_right">
+                        <ul>
+                            <li ng-click="switchTime('day')" ng-class="{'monitor2_li_active': timeObj.day}">当天</li>
+                            <li>|</li>
+                            <li ng-click="switchTime('week')" ng-class="{'monitor2_li_active': timeObj.week}">一周</li>
+                            <li>|</li>
+                            <li ng-click="switchTime('month')" ng-class="{'monitor2_li_active': timeObj.month}">一月</li>
+                            <li>|</li>
+                            <li ng-click="switchTime('year')" ng-class="{'monitor2_li_active': timeObj.year}">一年</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <highchart config="monitorChart"></highchart>
+                </div>
+
+                <p>气象观测方法-气温：气温是地面气象观测规定高度上的空气温度温度温度...</p>
+
+                <div class="weather2_content3">
+                    <span>风力风向</span>
+                </div>
+
+                <div class="weather2_content4">
+                    <highchart config="getwindColumnChart" style="height: 100%;width: 66%;float: left"></highchart>
+
+                    <div id="container" style="height: 100%;width: 26%;float: right;"></div>
+                    <div style="display:none">
+                        <table id="freq" border="0" cellspacing="0" cellpadding="0">
+                            <tr nowrap>
+                                <th colspan="9" class="hdr">Table of Frequencies (percent)</th>
+                            </tr>
+                            <tr nowrap>
+                                <th class="freq">Direction</th>
+                                <th class="freq">一级风</th>
+                                <th class="freq">二级风</th>
+                                <th class="freq">三级风</th>
+                            </tr>
+                            <tr nowrap>
+                                <td class="dir">北</td>
+                                <td class="data">1.81</td>
+                                <td class="data">1.78</td>
+                                <td class="data">0.16</td>
+                            </tr>
+                            <tr nowrap>
+                                <td class="dir">东北</td>
+                                <td class="data">0.82</td>
+                                <td class="data">0.82</td>
+                                <td class="data">0.07</td>
+                            </tr>
+                            <tr nowrap>
+                                <td class="dir">东</td>
+                                <td class="data">0.62</td>
+                                <td class="data">2.20</td>
+                                <td class="data">0.49</td>
+                            </tr>
+                            <tr nowrap>
+                                <td class="dir">东南</td>
+                                <td class="data">1.61</td>
+                                <td class="data">3.06</td>
+                                <td class="data">2.37</td>
+                            </tr>
+                            <tr nowrap>
+                                <td class="dir">南</td>
+                                <td class="data">2.66</td>
+                                <td class="data">4.74</td>
+                                <td class="data">0.43</td>
+                            </tr>
+                            <tr nowrap>
+                                <td class="dir">西南</td>
+                                <td class="data">2.53</td>
+                                <td class="data">4.01</td>
+                                <td class="data">1.22</td>
+                            </tr>
+                            <tr nowrap>
+                                <td class="dir">西</td>
+                                <td class="data">1.64</td>
+                                <td class="data">1.71</td>
+                                <td class="data">0.92</td>
+                            </tr>
+                            <tr nowrap>
+                                <td class="dir">西北</td>
+                                <td class="data">1.58</td>
+                                <td class="data">4.28</td>
+                                <td class="data">1.28</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <p>气象观测方法-风：风是空气的水平运动，是一个用方向（风向）..</p>
+
+                <div class="weather2_content3">
+                    <span>降水量</span>
+                </div>
+
+                <ul class="weather2_content3_ul">
+                    <li ng-click="monthPrecipitation()" ng-class="{'weather2_li_active':month_precipitation}">过去12个月
+                    </li>
+                    <li ng-click="dayPrecipitation()" ng-class="{'weather2_li_active':day_precipitation}">过去30天
+                        <span>|</span>
+                    </li>
+                </ul>
+
+                <div class="weather2_content4">
+                    <highchart config="getprecipitationChart" style="height: 100%;"></highchart>
+                </div>
+                <p>
+                    <span style="float: left">数据来自国家气象局网站，仅供参考使用!</span>
+                    <span style="float: right">什么是降水量？：从天空降落到地面上的液态或固态（经融化后）...</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>

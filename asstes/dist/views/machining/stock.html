@@ -1,0 +1,324 @@
+<div style="padding: 0 30px;" ng-controller="stockCtr">
+
+    <div class="pageTop_nav clearFloat">
+        <div style="float: left">
+            <span>加工 ></span>
+            <span style="font-size: 16px;">{{stockTopNav}}</span>
+        </div>
+        <div class="cs_header">
+            <span ng-class="{'cs_header_active':stockTopNav == '库存管理'}" ng-click="inventory()">
+                <img src="tools/images/tjsbg_01.jpg"/>
+                <span>库存</span>
+            </span>
+            <span ng-class="{'cs_header_active':stockTopNav == '过期物料'}" ng-click="stale()">
+                <img src="tools/images/tjsbg_02.jpg"/>
+                <span>过期</span>
+            </span>
+            <span ng-class="{'cs_header_active':stockTopNav == '流水记录'}" ng-click="spring()">
+                <img src="tools/images/tjsbg_03.jpg"/>
+                <span>流水</span>
+            </span>
+            <span ng-class="{'cs_header_active':stockTopNav == '盘点记录'}" ng-click="check()">
+                <img src="tools/images/tjsbg_04.jpg"/>
+                <span>盘点</span>
+            </span>
+        </div>
+    </div>
+
+    <div ng-switch="stockTopNav" style="margin-top: 30px;">
+
+        <div ng-switch-default="库存管理" class="stockInventory">
+
+            <div>
+                <div class="form-inline" style="float: left;">
+                    <select class="form-control">
+                        <option class="selected">全部</option>
+                        <option>原料</option>
+                        <option>商品</option>
+                        <option>辅料</option>
+                        <option>投入品</option>
+                    </select>
+                    <input type="text" class="form-control"/>
+                    <button type="button" class="btn btn-primary">搜索</button>
+                    <a advanced-search>高级搜索</a>
+                </div>
+                <div style="float: right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">入库
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a>原料入库</a></li>
+                            <li><a>商品入库</a></li>
+                            <li><a>辅料入库</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">出库
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a>原料出库</a></li>
+                            <li><a>商品出库</a></li>
+                            <li><a>辅料出库</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">报损
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="left: auto;right: 0;">
+                            <li><a>原料报损</a></li>
+                            <li><a>商品报损</a></li>
+                            <li><a>辅料报损</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+                <div class="stock_advancedSearch">
+                    <ul>
+                        <li>
+                            <span class="contorl-label">批次编号 : </span>
+                            <input type="text" class="form-control"/>
+                        </li>
+                        <li>
+                            <span class="contorl-label">库房 : </span>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span class="contorl-label">经办人 : </span>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <span class="contorl-label">物料等级 : </span>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                                <option>一等品</option>
+                                <option>二等品</option>
+                                <option>三等品</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span class="contorl-label">来源 : </span>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                            </select>
+                        </li>
+                        <li style="width: 530px;">
+                            <!-- <div>
+                                 <div style="float: left;width: 40%;" class='input-group date datetimepicker1' date-picker>
+                                     <input type='text' class="form-control"/>
+                                     <span class="input-group-addon">
+                                         <span class="fa fa-calendar"></span>
+                                     </span>
+                                 </div>
+                                 <div style="float: left;width: 40%;" class='input-group date datetimepicker1' date-picker>
+                                     <input type='text' class="form-control"/>
+                                     <span class="input-group-addon">
+                                         <span class="fa fa-calendar"></span>
+                                     </span>
+                                 </div>
+                             </div>-->
+
+                            <span class="contorl-label">入库时间 : </span>
+                            <input type="text" class="form-control" style="margin-right: 0"/>
+                            <label>-</label>
+                            <input type="text" class="form-control"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <ul ul-allocation>
+                    <li>ID</li>
+                    <li>物料编号</li>
+                    <li>物料名称</li>
+                    <li>物料等级</li>
+                    <li>总库存</li>
+                    <li>冻结数量</li>
+                    <li>可销售数量</li>
+                    <li>实际库存</li>
+                    <li>物料规格</li>
+                    <li>操作</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div ng-switch-when="过期物料" class="stockInventory">
+
+            <div>
+                <div class="form-inline" style="float: left;">
+                    <select class="form-control">
+                        <option class="selected">全部</option>
+                        <option>原料</option>
+                        <option>商品</option>
+                        <option>辅料</option>
+                    </select>
+                    <input type="text" class="form-control"/>
+                    <button type="button" class="btn btn-primary">搜索</button>
+                    <a advanced-search>高级搜索</a>
+                </div>
+                <div style="clear: both"></div>
+                <div class="stock_advancedSearch">
+                    <ul>
+                        <li>
+                            <span class="contorl-label">物料批次 : </span>
+                            <input type="text" class="form-control"/>
+                        </li>
+                        <li>
+                            <span class="contorl-label">过期时间 : </span>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <ul ul-allocation>
+                    <li>物料编号</li>
+                    <li>物料名称</li>
+                    <li>批次编号</li>
+                    <li>来源</li>
+                    <li>等级</li>
+                    <li>物料类型</li>
+                    <li>剩余数量</li>
+                    <li>物料单位</li>
+                    <li>生产日期</li>
+                    <li>保质期</li>
+                    <li>过期天数</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div ng-switch-when="流水记录" class="stockInventory">
+            <div>
+                <div class="form-inline" style="float: left;">
+                    <select class="form-control">
+                        <option class="selected">全部</option>
+                        <option>原料</option>
+                        <option>商品</option>
+                        <option>辅料</option>
+                    </select>
+                    <input type="text" class="form-control"/>
+                    <button type="button" class="btn btn-primary">搜索</button>
+                    <a advanced-search>高级搜索</a>
+                </div>
+                <div style="float: right">
+                    <button class="btn btn-default">导出</button>
+                </div>
+                <div style="clear: both"></div>
+                <div class="stock_advancedSearch">
+                    <ul>
+                        <li>
+                            <span class="contorl-label">出入库类型 : </span>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                            </select>
+                        </li>
+                        <li style="width: 530px;">
+                            <span class="contorl-label">开始时间 : </span>
+                            <input type="text" class="form-control" style="margin-right: 0"/>
+                            <label>-</label>
+                            <input type="text" class="form-control"/>
+                        </li>
+                        <li>
+                            <span class="contorl-label">经办人 : </span>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                            </select>
+                        </li>
+
+                        <li>
+                            <span class="contorl-label">库房 : </span>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                            </select>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <ul ul-allocation>
+                    <li>ID</li>
+                    <li>出入库编号</li>
+                    <li>出入库类型</li>
+                    <li>物料名称</li>
+                    <li>存储库房</li>
+                    <li>经办人</li>
+                    <li>出入库日期</li>
+                    <li>操作</li>
+                </ul>
+            </div>
+        </div>
+
+        <div ng-switch-when="盘点记录" class="stockInventory">
+            <div>
+                <div class="form-inline" style="float: left;">
+                    <select class="form-control">
+                        <option class="selected">全部</option>
+                        <option>原料</option>
+                        <option>商品</option>
+                        <option>辅料</option>
+                    </select>
+                    <input type="text" class="form-control"/>
+                    <button type="button" class="btn btn-primary">搜索</button>
+                    <a advanced-search>高级搜索</a>
+                </div>
+                <div style="float: right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">盘点
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a>原料盘点</a></li>
+                            <li><a>商品盘点</a></li>
+                            <li><a>辅料盘点</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+                <div class="stock_advancedSearch">
+                    <ul>
+                        <li>
+                            <span class="contorl-label">操作人 : </span>
+                            <input type="text" class="form-control"/>
+                        </li>
+                        <li>
+                            <span class="contorl-label">库房 : </span>
+                            <select class="form-control">
+                                <option value="">全部</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <ul ul-allocation>
+                    <li>ID</li>
+                    <li>盘点批次</li>
+                    <li>存储库房</li>
+                    <li>库房类型</li>
+                    <li>操作人</li>
+                    <li>状态</li>
+                    <li>操作</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>

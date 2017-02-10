@@ -1,0 +1,54 @@
+<div style="padding: 0 30px;position: fixed;height: 100%;">
+    <div class="pageTop_nav clearFloat">
+        <div style="float: left">
+            <a ng-href="#/">个人主页</a>
+            <span> > </span>
+            <span style="font-size: 16px;">积分兑换记录</span>
+        </div>
+        <div style="float: right;font-size: 16px;">
+            <img src="tools/images/contact.png">
+            <span style="padding-left: 6px">联系我们
+                <i style="color: #428bca;padding-left: 6px">010-64688042</i></span>
+        </div>
+    </div>
+
+    <div class="integral_Record form-horizontal">
+        <div class="row">
+            <div class="col-md-2">
+                <input type="text" class="form-control" placeholder="请输入收货人/商品名称"/>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label"
+                            style="padding-right: 0;">订单状态</label>
+                    <div class="col-sm-8">
+                        <select class="form-control">
+                            <option>全部</option>
+                            <option>订单未配送</option>
+                            <option>订单配送中</option>
+                            <option>订单已取消</option>
+                            <option>订单已完成</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2">
+                <div class='input-group date datetimepicker1' date-picker>
+                    <input type='text' class="form-control"/>
+                    <span class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-1">
+                <submit class="btn btn-primary">搜索</submit>
+            </div>
+
+        </div>
+    </div>
+
+</div>

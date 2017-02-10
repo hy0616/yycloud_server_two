@@ -1,0 +1,112 @@
+<div style="width: 75%;float: left">
+    <div class="home_information">
+        <div class="clearFloat">
+            <h2>个人信息</h2>
+            <a ng-href="#/personalSetting" class="btn btn-default">编辑</a>
+            <a ng-href="#/integralRecord" class="btn btn-default">兑换记录</a>
+            <a ng-href="#/integralExchange" class="btn btn-primary">积分兑换</a>
+        </div>
+        <div class="clearFloat">
+            <span class="home_personimg">
+                <img src="tools/images/welcome_noperson.png">
+            </span>
+
+            <div style="width: 76%;float: right">
+                <div>
+                    <h3>yunyang</h3>
+
+                    <p>所属企业: 云洋数据</p>
+
+                    <p>上次登录时间： 2016/06/30
+                        <a ng-href="#/integralRule"
+                           style="float: right;margin: 0;width: 100px;cursor: pointer">如何获取积分?</a>
+                    </p>
+
+                </div>
+
+                <div class="home_information_detailed">
+                    <div>
+                        <p>区域</p>
+                        <span><i style="color:#4ea5e6;">365<em>亩</em></i></span>
+                    </div>
+                    <div>
+                        <p>种植</p>
+                        <span><i style="color:#06ad2d;">300<em>亩</em></i></span>
+                    </div>
+                    <div>
+                        <p>农事</p>
+                        <span><i style="color:#8a8deb;">1<em>件</em></i></span>
+                    </div>
+                    <div style="border-right: none">
+                        <p>积分</p>
+                        <span><i style="color:#ff9300;">0<em>分</em></i></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="home_plantTask">
+
+        <div style="float: left" ng-repeat="TaskData in plantTaskData">
+            <span>
+                <img ng-src={{TaskData.img}}/>
+            </span>
+
+            <div style="float: right;width: 75%;margin-top: 8px;padding-right: 6px">
+                <h4>{{TaskData.label}}<span style="font-size: 12px;padding-left: 8px;">{{TaskData.total}}</span></h4>
+
+                <p style="color: #aaaaaa">{{TaskData.conent}}</p>
+            </div>
+
+            <div class="home_taskSpeed clearFloat">
+                <span><img src="tools/images/ask.png"/>任务进度: {{TaskData.schedule}}</span>
+                <span><img src="tools/images/active.png"/>累积积分: {{TaskData.integral}}</span>
+                <span style="float: right;margin: 0;"><a ng-href={{TaskData.src}} class="btn btn-primary">去完成</a></span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="home_rightBlock">
+
+    <div style="min-height: 300px;margin-top: 0">
+        <div class="home_stationMessage">
+            <h2>站内消息</h2>
+            <a>更多></a>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <a><!--todo--></a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="home_publicNumber">
+        <div>
+            <h2>关注公众号</h2>
+        </div>
+        <div></div>
+
+    </div>
+
+    <div>
+
+    </div>
+
+    <div class="home_opinion clearFloat">
+        <h2>意见栏</h2>
+        <div>
+            <textarea class="form-control"></textarea>
+            <a class="btn btn-primary">提交</a>
+        </div>
+
+    </div>
+
+</div>

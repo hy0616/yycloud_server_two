@@ -1,0 +1,33 @@
+{
+  "name": "yydata",
+  "authors": [
+    "yydata"
+  ],
+  "description": "this is angular and node project",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "web",
+    "angular",
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "yycloud.yunyangdata.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.3",
+    "jquery": "^2.2.2",
+    "angular-local-storage": "^0.2.7",
+    "angular-route": "^1.5.6",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "bootstrap": "^3.3.7",
+    "highcharts-ng": "^0.0.12",
+    "highcharts": "^4.2.6"
+  }
+}

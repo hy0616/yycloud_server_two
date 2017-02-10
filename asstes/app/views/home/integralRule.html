@@ -1,0 +1,45 @@
+<div style="padding: 0 30px;" ng-controller="integralRule">
+    <div class="pageTop_nav clearFloat">
+        <div style="float: left">
+            <a ng-href="#/">个人主页</a>
+            <span> > </span>
+            <span style="font-size: 16px;">积分规则</span>
+        </div>
+        <div style="float: right;">
+            <a ng-href="#/">返回个人中心</a>
+        </div>
+    </div>
+
+    <div class="clearFloat">
+        <div class="integral_rule_left">
+            <ul>
+                <li ng-repeat="rule in ruleData" ng-click="switshNav(rule)"
+                        ng-class="{'active_rule_li':rule.navLabel == currentData.navLabel}">
+                    <p>{{rule.navLabel}}</p>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="integral_rule_right">
+            <h3>{{currentData.navLabel}}</h3>
+            <div>
+                <div ng-repeat="current in currentData.child">
+                    <p>
+                        <span style="color: #8bb643">{{current.operation}}:</span>
+                        {{current.operationText}}
+                    </p>
+
+                    <p>
+                       奖励:
+                        <img src="tools/images/money.png" />
+                        <span style="color:#ff6600;">{{current.number}}</span>积分
+                    </p>
+                </div>
+            </div>
+            <p style="clear: both;padding: 10px 0 18px 38px;border-bottom: 1px dashed #E2E2E2">[说明] {{currentData.explain}}</p>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>云洋i农综合管理平台</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Forza">
+    <meta name="author" content="Ndevr Studios & The Red Team">
+    <meta property="qc:admins" content="5701516423475461561167414163757">
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="styles/all_lib_css.min.css">
+    <link rel="stylesheet" href="styles/all_css.min.css">
+    <!-- endinject -->
+    <link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="assets/css/ie8.css">
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="mainApp" ng-controller="mainCtr" ng-cloak>
+<header class="main_header">
+    <div>
+        <a ng-href="#/"><img src="tools/images/yylogo.png"></a>
+    </div>
+    <div>
+        <ul class="menu" style="float:left;">
+            <li class="r_ulli1" style="margin-top: 11px;min-width:70px;">
+                <a href="javascript:return false" class="parent">
+                    <span>
+                        <img class="img1login rt_top" src="tools/images/r_t_09.jpg" width="20" height="20">&nbsp;&nbsp;yunyang
+                        <img class="img2login rt_top" src="tools/images/xs_03.jpg" width="9" height="20">
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+      <!--  <ul class="nav navbar-nav">
+            <li><a href="#">消息</a></li>
+            <li><a href="#">帮助</a></li>
+            <li class="r_ulli1 dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown">
+                    <img class="img1login rt_top" src="tools/images/r_t_09.jpg" width="20" height="20">&nbsp;&nbsp;shuyi
+                    <img class="img2login rt_top" src="tools/images/xs_03.jpg" width="9" height="20">
+                </a>
+                <ul class="dropdown-menu" style="margin: 16px 16px 0 0">
+                    <li><a href="#">企业设置</a></li>
+                    <li><a href="#">个人首页</a></li>
+                    <li><a href="#">系统消息</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">退出</a></li>
+                </ul>
+            </li>
+        </ul>-->
+
+    </div>
+</header>
+<div class="content">
+    <nav id="left_nav" role="navigation">
+        <ul ng-controller="NavigationCtr" class="left_navigtion">
+            <li ng-repeat="item in menu" class="bgimg1" ng-click="clickNav(item)" left-nav
+                ng-class="{'clickBgimg1':item.label == currentLabel && item.label == clickBgimg1['label']}">
+                <img ng-if="item.url == undefined" ng-src="{{item.img}}">
+                <a ng-if="item.url !== undefined" ng-href={{item.url}}><img ng-src="{{item.img}}"></a>
+                <ul ng-if="item.child !== undefined">
+                    <li ng-repeat="da in item.child" left-second-nav ng-click="clickSecondNav(item)">
+                        <a ng-href={{da.url}}>
+                            <img ng-src="{{da.img1}}">
+                            <img style="margin-top: 3px" ng-src="{{da.img2}}">
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div ng-view="" style="padding: 60px 0 0 78px;clear: both"></div>
+
+    <footer>
+
+    </footer>
+</div>
+
+<!-- inject:js -->
+<script src="scripts/all_lib.min.js"></script>
+<script src="scripts/all_logic.min.js"></script>
+<!-- endinject -->
+</body>
+</html>
