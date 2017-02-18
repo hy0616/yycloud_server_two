@@ -508,7 +508,7 @@
 }
 
 .personalSetting_left {
-    width: 14%;
+    width: 15%;
     float: left;
     padding: 0 16px;
     margin-top: 20px;
@@ -524,18 +524,18 @@
 
 .personalSetting_left:nth-child(1):nth-child(1) img{
     width: 100%;
-    height: 200px;
-    padding: 8px;
+    height: 100%;
+    padding: 4%;
 }
 
 .personalSetting_left>div:nth-child(1)>span:nth-child(2){
-    width: 176px;
+    width: 90%;
     height: 34px;
     line-height: 32px;
     position: relative;
     text-align: center;
     display: inline-block;
-    margin: 12px 20px 0 8px;
+    margin: 12px 6% 0 4%;
     border: 1px solid #E2E2E2;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -544,7 +544,7 @@
 }
 .personalSetting_left>div:nth-child(1)>span:nth-child(2) input{
     opacity: 0;
-    width: 176px;
+    width: 100%;
     height: 34px;
     cursor: pointer;
     position: absolute;
@@ -560,7 +560,7 @@
 
 .personalSetting_left>div:nth-child(2) span{
     text-align: center;
-    width: 100px;
+    width: 48%;
     height: 68px;
     display: inline-block;
 }
@@ -582,7 +582,7 @@
 }
 
 .personalSetting_right{
-    width: 85%;
+    width: 84%;
     float: left;
 }
 
