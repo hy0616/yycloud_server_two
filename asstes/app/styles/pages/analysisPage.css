@@ -13,6 +13,7 @@
     border-right: 1px solid #e1e4eb;
 }
 
+
 .analysis_left h2, .analysis_left li{
     cursor: pointer;
     font-size: 12px;
@@ -54,6 +55,16 @@
     float: left;
     width: 87%;
     padding: 0 30px;
+}
+
+@media screen and (max-width: 1400px){
+    .analysis_left{
+        width: 14%;
+    }
+
+    .analysis_right{
+        width: 86%;
+    }
 }
 
 .analysis_pageTop_font{

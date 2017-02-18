@@ -25,6 +25,33 @@
     font-size: 13px;
 }
 
+@media screen and (max-width: 1680px){
+
+    .oderLeftNav{
+        width: 14%;
+    }
+
+    .orderForm{
+        width: 86%;
+    }
+    .oderLeftNav ul li{
+        font-size: 10px;
+    }
+}
+
+/*
+
+@media screen and (max-width: 1600px){
+
+    .oderLeftNav{
+        width: 15%;
+    }
+
+    .orderForm{
+        width: 85%;
+    }
+}*/
+
 .oderLeftNavActive{
     background: url("../tools/images/levelMenu3_hv.jpg")no-repeat;
     /*color: #ffffff;*/
@@ -133,7 +160,7 @@
 }
 
 .orderContent3 input, .orderContent3 select{
-    min-width: 172px!important;
+    min-width: 130px!important;
     margin: 0 5px;
 }
 

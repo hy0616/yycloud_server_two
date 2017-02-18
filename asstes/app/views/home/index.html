@@ -50,21 +50,23 @@
 
     <div class="home_plantTask">
 
-        <div style="float: left" ng-repeat="TaskData in plantTaskData">
-            <span>
-                <img ng-src={{TaskData.img}}/>
-            </span>
+        <div ng-repeat="TaskData in plantTaskData">
+            <div class="home_taskTop">
+                <span>
+                    <img ng-src={{TaskData.img}}>
+                </span>
 
-            <div style="float: right;width: 75%;margin-top: 8px;padding-right: 6px">
-                <h4>{{TaskData.label}}<span style="font-size: 12px;padding-left: 8px;">{{TaskData.total}}</span></h4>
+                <div style="float: right;width: 74%;margin-top: 8px;padding-right: 6px">
+                    <h4>{{TaskData.label}}<span style="">{{TaskData.total}}</span></h4>
 
-                <p style="color: #aaaaaa">{{TaskData.conent}}</p>
+                    <p style="color: #aaaaaa">{{TaskData.conent}}</p>
+                </div>
             </div>
 
             <div class="home_taskSpeed clearFloat">
                 <span><img src="tools/images/ask.png"/>任务进度: {{TaskData.schedule}}</span>
                 <span><img src="tools/images/active.png"/>累积积分: {{TaskData.integral}}</span>
-                <span style="float: right;margin: 0;"><a ng-href={{TaskData.src}} class="btn btn-primary">去完成</a></span>
+                <span style="float: right;margin-top: 0"><a ng-href={{TaskData.src}} class="btn btn-primary">去完成</a></span>
             </div>
         </div>
 

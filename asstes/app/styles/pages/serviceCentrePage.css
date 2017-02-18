@@ -1,13 +1,14 @@
 .version_upgrade {
     position: relative;
     height: 180px;
-    padding-right: 450px;
-    margin-bottom: 20px;
+    padding-right: 0px;
+    margin-bottom: 40px;
 }
 
 .upgrade_left {
     position: relative;
     height: 180px;
+    width: 56%;
     border: 1px solid #d7dbe3;
     border-radius: 5px;
     box-sizing: border-box;
@@ -140,7 +141,7 @@
 
 .progress_item .total_num {
     float: left;
-    width: 44px;
+    width: 16%;
     height: 20px;
     line-height: 20px;
     margin-top: -3px;
@@ -168,9 +169,9 @@
 
 .upgrade_right {
     position: absolute;
-    right: 0;
     top: 0;
-    width: 436px;
+    left: 57%;
+    width: 25%;
     height: 180px;
     padding: 15px;
     border: 1px solid #d7dbe3;
@@ -228,7 +229,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 146px;
+    width: 40%;
     height: 146px;
     padding: 10px;
     border: 1px solid #d7dbe3;
@@ -308,10 +309,10 @@
 /* 立即认证 */
 .service_state_default {
     position: absolute;
-    right: 0;
     top: 0;
+    left: 83%;
     display: none-;
-    width: 300px;
+    width: 16%;
     height: 100%;
     text-align: center;
     color: #fff;
@@ -441,7 +442,7 @@
     border: 1px solid #d7dbe3;
     border-radius: 5px;
     box-sizing: border-box;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .value-added_service .icon_ser {
